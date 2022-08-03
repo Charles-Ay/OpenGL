@@ -26,7 +26,7 @@ bool cLightManager::SaveLightConfigToFile(cLightManager& lightManager, std::stri
 
 	file << numberOfUsedLights << "\n";
 	file << LIGHT_OBJECT_NAME << "\n";
-	for (unsigned int i = 0; i < numberOfUsedLights; ++i) {
+	for (int i = 0; i < numberOfUsedLights; ++i) {
 		file << lightManager.theLights[i].position.x << "   " << lightManager.theLights[i].position.y 
 			<< "   " << lightManager.theLights[i].position.z << "\n";
 		

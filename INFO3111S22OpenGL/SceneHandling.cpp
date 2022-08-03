@@ -1,7 +1,7 @@
 
 #include <string>
 #include <fstream>
-#include "cVAOManager.h">
+#include "cVAOManager.h"
 #include "cMesh.h"
 #include <iostream>
 #include <set>
@@ -50,7 +50,7 @@ bool LoadAllTheModels(std::string sceneFileName,
 
 	} while (numberOfModelTypesLoaded < numberOfModelTypesToLoad);
 
-	if (sceneFile.peek() != sceneFile.eof()) {
+	if (sceneFile.peek() != (int)sceneFile.eof()) {
 		//amt of models to load
 		//file names
 		//x y z

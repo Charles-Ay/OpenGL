@@ -286,7 +286,7 @@ void UI::ShowPropertyEditor(bool* p_open)
                     ImGui::PushItemWidth(-1);
                     float sc[1] = { g_vec_pMeshesToDraw[i]->overallScale };
                     float* pSc = sc;
-                    changes_m[i].scaleChange = ImGui::DragFloat("scale", pSc, 0.01);
+                    changes_m[i].scaleChange = ImGui::DragFloat("scale", pSc, 0.01f);
 					if(changes_m[i].scaleChange)changes_m[i].scale = *pSc;
 					else changes_m[i].scale = g_vec_pMeshesToDraw[i]->overallScale;
                     ImGui::PopItemWidth();
@@ -310,7 +310,7 @@ void UI::ShowPropertyEditor(bool* p_open)
                     ImGui::PushItemWidth(-1);
                     float tp[1] = { g_vec_pMeshesToDraw[i]->RGBA.a };
                     float* pTp = tp;
-                    changes_m[i].transChange = ImGui::DragFloat("transparancy", pTp, 0.01, 0, 1);
+                    changes_m[i].transChange = ImGui::DragFloat("transparancy", pTp, 0.01f, 0, 1.0f);
                     if (changes_m[i].transChange) changes_m[i].transparancy = *pTp;
                     else changes_m[i].transparancy = g_vec_pMeshesToDraw[i]->RGBA.a;
                     ImGui::PopItemWidth();
@@ -401,7 +401,7 @@ void UI::ShowPropertyEditor(bool* p_open)
                         changes_l[i].lightChange = true;
 					}
                     else {
-                        changes_l[i].lightType = e;
+                        changes_l[i].lightType = static_cast<float>(e);
                         changes_l[i].lightChange = true;
                     }
                     ImGui::PopItemWidth();
@@ -437,7 +437,7 @@ void UI::ShowPropertyEditor(bool* p_open)
                     ImGui::PushItemWidth(-1);
                     float fl3A[3] = { pTheLightManager->theLights[i].atten.x, pTheLightManager->theLights[i].atten.y, pTheLightManager->theLights[i].atten.z };
 					ptr = fl3A;
-                    changes_l[i].attenChange = ImGui::DragFloat3("attenuation", ptr, 0.02);
+                    changes_l[i].attenChange = ImGui::DragFloat3("attenuation", ptr, 0.02f);
 					if (changes_l[i].attenChange)changes_l[i].atten = glm::vec4(ptr[0], ptr[1], ptr[2], 1.0f);
                     else changes_l[i].atten = pTheLightManager->theLights[i].atten;
                     ImGui::PopItemWidth();
@@ -449,7 +449,7 @@ void UI::ShowPropertyEditor(bool* p_open)
                     ImGui::PushItemWidth(-1);
                     float fl2[2] = { pTheLightManager->theLights[i].param1.y, pTheLightManager->theLights[i].param1.z};
 					ptr = fl2;
-                    changes_l[i].innerOuterChange = ImGui::DragFloat2("angles", ptr, 0.01);
+                    changes_l[i].innerOuterChange = ImGui::DragFloat2("angles", ptr, 0.01f);
 					if (changes_l[i].innerOuterChange || changes_l[i].lightChange)changes_l[i].innerOuter = glm::vec4(changes_l[i].lightType, ptr[0], ptr[1], 0.0f);
                     else changes_l[i].innerOuter = pTheLightManager->theLights[i].param1;
                     ImGui::PopItemWidth();

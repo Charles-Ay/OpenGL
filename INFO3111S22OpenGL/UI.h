@@ -10,16 +10,16 @@ public:
 	struct LightValueChanges {
 		bool on = true;
 		bool lightChange = false;
-		int lightType = 0;
+		float lightType = 0;
 		bool posChange = false;
 		bool difChange = false;
 		bool attenChange = false;
 		bool innerOuterChange = false;
 
-		glm::vec4 pos;
-		glm::vec4 dif;
-		glm::vec4 atten;
-		glm::vec4 innerOuter;
+		glm::vec4 pos = glm::vec4(0.0f);
+		glm::vec4 dif = glm::vec4(0.0f);
+		glm::vec4 atten = glm::vec4(0.0f);
+		glm::vec4 innerOuter = glm::vec4(0.0f);
 	};
 
 	struct ModelValueChanges {
@@ -29,11 +29,11 @@ public:
 		bool colorChange = false;
 		bool transChange = false;
 
-		glm::vec3 pos;
-		glm::vec3 rot;
-		glm::vec4 color;
+		glm::vec3 pos = glm::vec3(0.0f);
+		glm::vec3 rot = glm::vec3(0.0f);
+		glm::vec4 color = glm::vec4(0.0f);
 		float scale = 0.0f;
-		float transparancy;
+		float transparancy = 1.0f;
 	};
 	
 	static void ShowMainWindow(bool* p_open = NULL);
