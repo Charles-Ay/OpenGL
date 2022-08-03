@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{2a0105fb-1435-44bb-bc3d-303aefff3223}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FlyCamera">
+      <UniqueIdentifier>{37f74ce4-24e6-4132-a46f-11cf682c4a9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dear">
+      <UniqueIdentifier>{baed14da-32df-44dc-80aa-03091a4913fd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="theMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cShaderManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cVAOManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneHandling.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cLightHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawObjectFunction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlyCamera\cFlyCamera.cpp">
+      <Filter>FlyCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="InputHandlerFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cLightManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dear\imgui.cpp">
+      <Filter>dear</Filter>
+    </ClCompile>
+    <ClCompile Include="dear\imgui_demo.cpp">
+      <Filter>dear</Filter>
+    </ClCompile>
+    <ClCompile Include="dear\imgui_draw.cpp">
+      <Filter>dear</Filter>
+    </ClCompile>
+    <ClCompile Include="dear\imgui_impl_glfw.cpp">
+      <Filter>dear</Filter>
+    </ClCompile>
+    <ClCompile Include="dear\imgui_impl_opengl3.cpp">
+      <Filter>dear</Filter>
+    </ClCompile>
+    <ClCompile Include="dear\imgui_tables.cpp">
+      <Filter>dear</Filter>
+    </ClCompile>
+    <ClCompile Include="dear\imgui_widgets.cpp">
+      <Filter>dear</Filter>
+    </ClCompile>
+    <ClCompile Include="cMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cVAOManager_helper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UpdateEachFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cShaderManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globalStuff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cVAOManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cLightManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cLightHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyCamera\cFlyCamera.h">
+      <Filter>FlyCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyCamera\iCamera.h">
+      <Filter>FlyCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dear\imconfig.h">
+      <Filter>dear</Filter>
+    </ClInclude>
+    <ClInclude Include="dear\imgui.h">
+      <Filter>dear</Filter>
+    </ClInclude>
+    <ClInclude Include="dear\imgui_impl_glfw.h">
+      <Filter>dear</Filter>
+    </ClInclude>
+    <ClInclude Include="dear\imgui_impl_opengl3.h">
+      <Filter>dear</Filter>
+    </ClInclude>
+    <ClInclude Include="dear\imgui_impl_opengl3_loader.h">
+      <Filter>dear</Filter>
+    </ClInclude>
+    <ClInclude Include="dear\imgui_internal.h">
+      <Filter>dear</Filter>
+    </ClInclude>
+    <ClInclude Include="dear\imstb_rectpack.h">
+      <Filter>dear</Filter>
+    </ClInclude>
+    <ClInclude Include="dear\imstb_textedit.h">
+      <Filter>dear</Filter>
+    </ClInclude>
+    <ClInclude Include="dear\imstb_truetype.h">
+      <Filter>dear</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="simpleFragment.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="simpleVertex.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

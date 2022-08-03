@@ -1,0 +1,24 @@
+6
+assets/models/Isoshphere_flat_4div_xyz_n_rgba_uv.ply
+assets/models/mig29_xyz_n_rgba_uv.ply
+assets/models/cow_xyz_n_rgba_uv.ply
+assets/models/Seafloor2_xyz_n_rgba_uv.ply 
+assets/models/ssj100_xyz_n_rgba_uv.ply
+assets/models/Warehouse_xyz_n_rgba_uv.ply
+2
+assets/models/cow_xyz_only.ply
+10.5  6.4  -141.5
+0.4  0.1   0.2  1.0 
+0.0   0.0   0.0 
+1.0
+is_wireframe
+myCowTexture.bmp
+assets/models/cow_xyz_only.ply
+10.5   6.4   -143.5
+0.4   0.1  0.2  1.0 
+0.0   0.0   0.0 
+1.0
+is_wireframe
+JerseyCowTexture.bmp
+
+
