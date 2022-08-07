@@ -1,109 +1,49 @@
-7
-assets/models/Evee.ply
+2
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 assets/models/Seafloor2_xyz_n_rgba_uv.ply
-assets/models/Umbreon.ply
-assets/models/lights.ply
-assets/models/sun.ply
-assets/models/tauros.ply
-assets/models/tepig.ply
-20
+5
 assets/models/Seafloor2_xyz_n_rgba_uv.ply
-107.692   -121.5   42.4
+90   -7   0
+0.298   0.274   0.196   1
+0   0   0
+1
+has_texture
+assets/texturesWaterSurfaceTexture.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+0   10   -100
 1   1   1   1
 0   0   0
-80
-assets/models/sun.ply
-28.6925   53.5   23.4
+0.35
+has_texture
+assets/textures/DungeonsDungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+180   10   -100
 1   1   1   1
--0.0174536   -0.977385   -0.122172
-1
-assets/models/tauros.ply
-131.693   -92.5   120.4
-1   1   1   0.45
--4.72983   0.0523598   3.2114
-1
-assets/models/tepig.ply
-103.693   -112.5   117.4
-1   1   1   0.74
-0.0872663   -3.17649   -0.0174518
-0.05
-assets/models/Evee.ply
-98   -112.5   -10.6
-1   1   1   0.37
--0.0349072   -1.6057   -0.244346
-0.55
-assets/models/Umbreon.ply
-113.692   -110.5   3.4
-1   1   1   0.51
--3.30826   3.33166   -3.06147
-3.65
-assets/models/lights.ply
-10.6925   -108.5   26.4
-1   1   1   0.51
-0.209439   -2.32129   0.122171
-1
-assets/models/lights.ply
-30.6925   -111.5   -19.6
-1   1   1   0.51
-0.383972   -1.44863   0.401424
-1
-assets/models/lights.ply
-75.692   -115.5   -51.6
-1   1   1   0.51
-0.383972   -1.44863   0.401424
-1
-assets/models/lights.ply
-11.5   -116   69.5
-1   1   1   0.51
-0.383972   -1.44863   0.401424
-1
-assets/models/lights.ply
-30.6925   -119.932   112.321
-1   1   1   0.51
-0.383972   -1.44863   0.401424
-1
-assets/models/lights.ply
-151.693   -106.932   -43.679
-1   1   1   0.51
-0.383972   -1.44863   0.401424
-1
-assets/models/lights.ply
-193.193   -113.932   -11.679
+0   0   0
+0.35
+has_texture
+assets/textures/DungeonsTexture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+360   10   -100
 1   1   1   1
-0.383972   -1.44863   0.401424
-1
-assets/models/lights.ply
-208.693   -116.432   54.321
+0   0   0
+0.35
+has_texture
+assets/textures/DungeonsTexture_02_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+530   10   -100
 1   1   1   1
-0.383972   -1.44863   0.401424
-1
-assets/models/lights.ply
-206.693   -118.432   22.321
-1   1   1   1
-0.383972   -1.44863   0.401424
-1
-assets/models/lights.ply
-193.693   -114.432   96.321
-1   1   1   0.75
-0.383972   -1.44863   0.401424
-1
-assets/models/lights.ply
-165.693   -105.432   124.321
-1   1   1   1
-0.383972   -1.44863   0.401424
-1
-assets/models/lights.ply
-72.6925   -101.432   137.321
-1   1   1   1
-0.383972   -1.44863   0.401424
-1
-assets/models/lights.ply
-17.6925   -118.432   89.321
-1   1   1   1
-0.383972   -1.44863   0.401424
-1
-assets/models/lights.ply
-104.693   -108.432   137.321
-1   1   1   1
-0.383972   -1.44863   0.401424
-1
+0   0   0
+0.35
+has_texture
+assets/textures/DungeonsTexture_03_A_rotated_180_degrees.bmp   
+texture_end
+1   

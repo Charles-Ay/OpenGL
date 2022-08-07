@@ -101,6 +101,8 @@ public:
 		std::vector<sModelDrawInfo>& vecModelDrawInfo,
 		unsigned int shaderProgramID);
 
+	void GetLoadedModelList(std::vector<std::string>& vecModelList);
+
 	// We don't want to return an int, likely
 	bool FindDrawInfoByModelName(std::string filename,
 		sModelDrawInfo& drawInfo);
@@ -124,6 +126,25 @@ public:
 	void GenTextureCoordsSpherical(sModelDrawInfo& modelDrawInfo, enumTEXCOORDBIAS uBias, enumTEXCOORDBIAS vBias, bool basedOnNormals, float scale, bool fast);
 	void GenTextureCoordsLinear(sModelDrawInfo& modelDrawInfo, enumTEXCOORDBIAS uBias, float scale);
 
+	enum ePLYFileType
+	{
+		XYZ_ONLY,
+		XYZ_NORMAL,
+		XYZ_NORMAL_RGBA,
+		XYZ_RGBA,
+		XYZ_UV,
+		XYZ_NORMAL_UV,
+		XYZ_NORMAL_UV_RGBA,		// Blender
+		XYZ_NORMAL_RGBA_UV,		// MeshLab (VCGLIB)
+		XYZ_UV_RGBA,		// Blender
+		XYZ_RGBA_UV,		// MeshLab (VCGLIB)
+		UNKNOWN_FORMAT
+	};
+	// Returns UNKNOWN_FORMAT with any errors, too (like can't find a file, etc.)
+	ePLYFileType DetectPLYHeader(std::string fileName, std::string& sError);
+	std::string TranslateHeaderTypeString(ePLYFileType plyFileType);
+
+
 private:
 
 	std::map< std::string /*model name*/,
@@ -133,6 +154,42 @@ private:
 	// Loads the ply model file into a temporary array
 	bool m_LoadTheModel(std::string fileName,
 		sModelDrawInfo& drawInfo);
+
+	// Here's a faster loader that handles a few of the different formats
+	bool m_LoadTheModel_2(std::string fileName,
+		sModelDrawInfo& drawInfo,
+		ePLYFileType& fileTypeDetected);
+
+	// This is used for m_LoadTheModel_2()
+	class cStreamReader
+	{
+	public:
+		cStreamReader();
+		// Eventually, these may be inline, but not for now
+		inline std::string ASCIIReadNextString(char* pData, unsigned int& curIndex, const unsigned int& arraySize);
+		inline float ASCIIReadNextFloat(char* pData, unsigned int& curIndex, const unsigned int& arraySize);
+		inline int ASCIIReadNextInt(char* pData, unsigned int& curIndex, const unsigned int& arraySize);
+
+		void SetMinFloatRoundToZero(float minRoundToZero);
+		float GetMinFloatRoundToZeroValue(void);
+		void SetRoundTinyFloatsToZeroOnLoadFlag(bool bNewRoundToZeroFlag);
+		bool GetRoundTinyFloatsToZeroOnLoadFlag(void);
+		//inline float BINReadNextFloat( char* pData, unsigned int &curIndex );
+		//inline int BINReadNextInt( char* pData, unsigned int &curIndex );
+
+		static const float DEFAULTROUNDSMALLFLOATTOZEROVALUE; // = 0.001f;
+	private:
+		float m_roundToZeroValue;
+		bool m_bRoundSmallFloatToZeroFlag;
+	};
+
+	bool m_DetectPLYHeader(std::string fileName,
+		cVAOManager::ePLYFileType& fileTypeDetected,
+		std::string& sError);
+
+	// This is used by the m_DetectPLYHeader to compare tokens it's read
+	bool m_DoTokenListsMatch(const std::vector<std::string>& vecTokens, const std::vector<std::string>& compareArray);
+
 
 	std::string m_lastErrorString;
 	void m_AppendTextToLastError(std::string text, bool addNewLineBefore = true);

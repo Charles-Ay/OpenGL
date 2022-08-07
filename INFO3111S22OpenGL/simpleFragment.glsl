@@ -38,7 +38,14 @@ uniform vec3 eyeLocation;
 // If true, skip lighting calculation
 // 0 = false, not 0 is true
 uniform bool bDisableLighting;	
+// Default to zero (i.e. if we DON'T set this, it'll use the texture as colour)
+uniform bool bDontUseTextureColour;
 
+uniform sampler2D texture01;
+uniform sampler2D texture02; 
+
+uniform float texture01Ratio;
+uniform float texture02Ratio;
 
 
 // function signature, just like C or C++
@@ -61,11 +68,34 @@ void main()
 		return;
 	}
 	
-	// Else light the object
+	vec3 vertexColour = vec3(0.0f, 0.0f, 0.0f);
+	
+	if (bDontUseTextureColour)
+	{
+		// Redundant, but stresses that we AREN'T using the texture colour
+		vertexColour.rgb = fColour.rgb;
+	}
+	else
+	{
+	
+		// Texture stuff (sampling)
+		vec3 texture01Colour = texture( texture01, fUV_x2.xy ).rgb;
+		
+		vertexColour.rgb = texture01Colour.rgb;
 
+//		vertexColour.rgb =   (texture01Colour.rgb * texture01Ratio) 
+//							+(texture02Colour.rgb * texture02Ratio) 
+	}
+	
+//	outputColour.rgb = texture01SampledPixelColour.rgb;
+//	outputColour.a = fColour.a;
+//	return;
+	
+	
+	// Else light the object
 	vec4 tempSpecularVertexColour = vec4(1.0f, 1.0f, 1.0f, 1.0f);
 
-	outputColour = calcualteLightContrib( fColour.rgb, fNormal.xyz, 
+	outputColour = calcualteLightContrib( vertexColour.rgb, fNormal.xyz, 
 	                                      vertexWorldPosition.xyz, tempSpecularVertexColour );
 										  
 	// Copy over the alpha transparency value

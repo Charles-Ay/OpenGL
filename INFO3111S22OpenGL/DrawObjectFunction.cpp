@@ -9,6 +9,10 @@
 // glm::translate, glm::rotate, glm::scale, glm::perspective
 #include <glm/gtc/type_ptr.hpp> // glm::value_ptr
 
+#include "cBasicTextureManager/cBasicTextureManager.h"
+
+extern cBasicTextureManager* pTheTexureManager;
+
 void DrawObject(cMesh* pCurrentMesh, GLuint shaderProgramNumber, cVAOManager* pVAOManager,
     glm::mat4 matModel, glm::mat4 matView, glm::mat4 matProjection)
 {
@@ -154,6 +158,26 @@ void DrawObject(cMesh* pCurrentMesh, GLuint shaderProgramNumber, cVAOManager* pV
     {
         glUniform1f(bDisableLighting_UL, (GLfloat)GL_FALSE);
     }
+
+
+
+    // Texture binding...
+    GLuint texture00Unit = 0;			// Texture unit go from 0 to 79
+    // https://registry.khronos.org/OpenGL-Refpages/gl4/html/glActiveTexture.xhtml
+    glActiveTexture(texture00Unit + GL_TEXTURE0);	// GL_TEXTURE0 = 33984
+
+    // Setup the texture bindings
+//    GLuint texture00Number = pTheTexureManager->getTextureIDFromName("WaterSurfaceTexture.bmp");
+    GLuint texture00Number = pTheTexureManager->getTextureIDFromName(pCurrentMesh->textures[0]);
+    glBindTexture(GL_TEXTURE_2D, texture00Number);
+
+    // glBindTextureUnit( texture00Unit, texture00Number );	// OpenGL 4.5+ only
+    // Set texture unit in the shader, too
+    GLint texture01_UL = glGetUniformLocation(shaderProgramNumber, "texture01");
+    glUniform1i(texture01_UL, texture00Unit);
+
+
+
 
 
     // GL_LINE_LOOP, GL_POINTS, or GL_TRIANGLES

@@ -140,13 +140,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cBasicTextureManager\C24BitBMPpixel.cpp" />
+    <ClCompile Include="cBasicTextureManager\cBasicTextureManager.cpp" />
+    <ClCompile Include="cBasicTextureManager\CTextureFromBMP.cpp" />
     <ClCompile Include="cLightHelper.cpp" />
     <ClCompile Include="cLightManager.cpp" />
+    <ClCompile Include="cLoadTexture.cpp" />
     <ClCompile Include="cMesh.cpp" />
     <ClCompile Include="cShader.cpp" />
     <ClCompile Include="cShaderManager.cpp" />
     <ClCompile Include="cVAOManager.cpp" />
     <ClCompile Include="cVAOManager_helper.cpp" />
+    <ClCompile Include="cVAOManager_OtherLoaders.cpp" />
     <ClCompile Include="dear\imgui.cpp" />
     <ClCompile Include="dear\imgui_demo.cpp" />
     <ClCompile Include="dear\imgui_draw.cpp" />
@@ -164,7 +169,11 @@
     <ClCompile Include="UpdateEachFrame.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cBasicTextureManager\C24BitBMPpixel.h" />
+    <ClInclude Include="cBasicTextureManager\cBasicTextureManager.h" />
+    <ClInclude Include="cBasicTextureManager\CTextureFromBMP.h" />
     <ClInclude Include="cLightHelper.h" />
+    <ClInclude Include="cLoadTexture.h" />
     <ClInclude Include="cMesh.h" />
     <ClInclude Include="cShaderManager.h" />
     <ClInclude Include="cVAOManager.h" />

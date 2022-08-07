@@ -18,6 +18,9 @@
     <Filter Include="dear">
       <UniqueIdentifier>{baed14da-32df-44dc-80aa-03091a4913fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TextureManager">
+      <UniqueIdentifier>{03258d37-e1d2-4ce5-837e-64f25cbfeec4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="theMain.cpp">
@@ -86,6 +89,21 @@
     <ClCompile Include="UpdateEachFrame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cBasicTextureManager\C24BitBMPpixel.cpp">
+      <Filter>TextureManager</Filter>
+    </ClCompile>
+    <ClCompile Include="cBasicTextureManager\cBasicTextureManager.cpp">
+      <Filter>TextureManager</Filter>
+    </ClCompile>
+    <ClCompile Include="cBasicTextureManager\CTextureFromBMP.cpp">
+      <Filter>TextureManager</Filter>
+    </ClCompile>
+    <ClCompile Include="cVAOManager_OtherLoaders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cLoadTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cShaderManager.h">
@@ -141,6 +159,18 @@
     </ClInclude>
     <ClInclude Include="dear\imstb_truetype.h">
       <Filter>dear</Filter>
+    </ClInclude>
+    <ClInclude Include="cBasicTextureManager\C24BitBMPpixel.h">
+      <Filter>TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="cBasicTextureManager\cBasicTextureManager.h">
+      <Filter>TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="cBasicTextureManager\CTextureFromBMP.h">
+      <Filter>TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="cLoadTexture.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,11 +6,34 @@
 #include <iostream>
 #include <set>
 #include "FlyCamera/cFlyCamera.h"
+#include "cLoadTexture.h"
+
+#include <stdio.h>  /* defines FILENAME_MAX */
+#include <direct.h>
+#define GetCurrentDir _getcwd
 
 extern std::vector< cMesh* > g_vec_pMeshesToDraw;
 
 extern glm::vec3 g_cameraEye;
 extern cFlyCamera* g_pFlyCamera;
+
+std::string dir() {
+	char cCurrentPath[FILENAME_MAX];
+
+	if (!GetCurrentDir(cCurrentPath, sizeof(cCurrentPath)))
+	{
+		return "ERROR";
+	}
+
+	cCurrentPath[sizeof(cCurrentPath) - 1] = '\0'; /* not really required */
+
+	return cCurrentPath;
+}
+
+inline bool exists_test(const std::string& name) {
+	struct stat buffer;
+	return (stat(name.c_str(), &buffer) == 0);
+}
 
 bool LoadAllTheModels(std::string sceneFileName,
 	cVAOManager* pVAOManager,
@@ -67,10 +90,17 @@ bool LoadAllTheModels(std::string sceneFileName,
 		unsigned int numberOfModelsLoaded = 0;
 		while (numberOfModelsLoaded < numberOfModelsToLoad)
 		{
+			dir();
 			cMesh* mesh = new cMesh();
 			if (tmp != "")mesh->meshFileName = tmp;
 			else sceneFile >> mesh->meshFileName;
 			if (mesh->meshFileName == "")break;
+			
+			if(!exists_test(dir() + "\\" + mesh->meshFileName)){
+				error = "Error: couldn't find file " + mesh->meshFileName;
+				std::cout << error << std::endl;
+				return false;
+			}
 			sceneFile >> mesh->XYZLocation.x;
 			sceneFile >> mesh->XYZLocation.y;
 			sceneFile >> mesh->XYZLocation.z;
@@ -85,6 +115,27 @@ bool LoadAllTheModels(std::string sceneFileName,
 			sceneFile >> tmp;
 			if (tmp == "is_wireframe") {
 				mesh->bIsWireframe = true;
+			}
+			if (tmp == "is_wireframe") sceneFile >> tmp;
+
+			if (tmp == "has_texture") {
+				sceneFile >> mesh->texturePath;
+				int txtAmt = 0;
+				tmp = "";
+				std::set<std::string> textures;
+
+				for (int i = 0; i < mesh->MAXNUMTEXTURES; ++i) {
+					sceneFile >> tmp;
+					if (tmp == "texture_end")break;
+					mesh->textures[i] = tmp;
+					textures.insert(mesh->textures[i]);
+					++txtAmt;
+					tmp = "";
+				}
+				for (int i = 0; i < txtAmt; ++i) {
+					sceneFile >> mesh->textureRatio[i];
+				}
+				mesh->usedTextures = txtAmt;
 				tmp = "";
 			}
 			g_vec_pMeshesToDraw.push_back(mesh);
@@ -144,6 +195,23 @@ bool SaveSceneToFile(std::string sceneFileName, std::string& error)
 			<< "   " << pCurrentMesh->orientationEulerAngle.z << "\n";
 		sceneFile << pCurrentMesh->overallScale << "\n";
 		if (pCurrentMesh->bIsWireframe)sceneFile << "is_wireframe\n";
+		if (!pCurrentMesh->textures[0].empty()) {
+			sceneFile << "has_texture\n";
+			sceneFile << pCurrentMesh->texturePath;
+
+			for (int i = 0; i < pCurrentMesh->usedTextures; ++i) {
+				sceneFile << pCurrentMesh->textures[i] << "   ";
+			}
+
+			sceneFile << "\n";
+
+			sceneFile << "texture_end\n";
+
+			for (int i = 0; i < pCurrentMesh->usedTextures; ++i) {
+				sceneFile << pCurrentMesh->textureRatio[i] << "   ";
+			}
+			sceneFile << "\n";
+		}
 	}
 
 	error = "Can't load file " + sceneFileName;

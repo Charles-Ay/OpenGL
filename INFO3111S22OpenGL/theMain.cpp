@@ -23,11 +23,13 @@
 #include "cShaderManager.h"
 #include "cVAOManager.h"
 #include "cLightManager.h"
-#include "UI.h"
+#include "cBasicTextureManager/cBasicTextureManager.h"
+#include "cLoadTexture.h"
 
 #include "dear/imgui.h"
 #include "dear/imgui_impl_glfw.h"
 #include "dear/imgui_impl_opengl3.h"
+#include "UI.h"
 
 
 void PlaceAModelInARandomLocation(std::string modelName, float minScale, float maxScale);
@@ -56,6 +58,8 @@ std::vector< cMesh* > g_vec_pMeshesToDraw;
 cMesh* pMeshSphere = NULL;
 
 cLightManager* pTheLightManager = NULL;
+cBasicTextureManager* pTheTexureManager = NULL;
+
 
 bool g_EnableDebugLightSpeheres = true;
 
@@ -143,135 +147,13 @@ int main(void)
         std::cout << "Scene loaded OK" << std::endl;
     }
 	
+	
     std::string error;
     pTheLightManager = new cLightManager();
     pMeshSphere = new cMesh();
 
 
-
-
-
-
 	
-
-    //ImGui::InputText("string", buf, IM_ARRAYSIZE(buf));
-    //ImGui::SliderFloat("float", &f, 0.0f, 1.0f);
-
-//    ::g_vec_pMeshesToDraw.push_back(pMeshSphere);
-
-
-//    cMesh* pSpider1 = new cMesh();
-//    pSpider1->XYZLocation.x = -5.07f;
-//    pSpider1->orientationEulerAngle.x = glm::radians(-137.5f);
-//    pSpider1->orientationEulerAngle.z = glm::radians(+8.14f);
-//    pSpider1->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
-//    pSpider1->meshFileName = "assets/models/mig29_xyz_n_rgba_uv.ply";
-//    ::g_vec_pMeshesToDraw.push_back(pSpider1);
-//
-//    cMesh* pSpider2 = new cMesh();
-//    pSpider2->XYZLocation.x = +5.0f;
-//    pSpider2->XYZLocation.y = 2.0f;
-//    pSpider2->RGBA = glm::vec4(0.0f, 1.0f, 1.0f, 1.0f);
-//    pSpider2->meshFileName = "assets/models/mig29_xyz_n_rgba_uv.ply";
-//    pSpider2->overallScale = 3.0f;
-////    pSpider2->bIsWireframe = true;      // glPolygonMode() will be GL_LINE
-//    ::g_vec_pMeshesToDraw.push_back(pSpider2);
-//
-//    cMesh* pCow = new cMesh();
-//    pCow->orientationEulerAngle.y = glm::radians(-145.0f);
-//    pCow->overallScale = 0.5f;
-//    pCow->RGBA = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-////    pCow->RGBA = glm::vec4(0.5f, 1.0f, 0.5f, 1.0f);
-////    pCow->meshFileName = "assets/models/cow_xyz_only.ply";
-//    pCow->meshFileName = "assets/models/cow_xyz_n_rgba_uv.ply";
-//    ::g_vec_pMeshesToDraw.push_back(pCow);
-//
-//    cMesh* pSeaFloor = new cMesh();
-//    pSeaFloor->XYZLocation.y = -7.0f;
-//    // https://www.colorhexa.com/c2b280
-//    pSeaFloor->RGBA = glm::vec4(76.0f/255.0f, 70.0f/255.0f, 50.0f/255.0f, 1.0f);
-//    pSeaFloor->meshFileName = "assets/models/Seafloor2_xyz_n_rgba_uv.ply";
-//    ::g_vec_pMeshesToDraw.push_back(pSeaFloor);
-//
-//    cMesh* pssj100 = new cMesh();
-//    pssj100->XYZLocation.z = 15.0f;
-//    // rgb(244, 136, 78)
-//    pssj100->RGBA = glm::vec4(244.0f/255.0f, 136.0f/255.0f, 78.0f/255.0f, 1.0f);
-//    pssj100->orientationEulerAngle.y = glm::radians(180.0f);
-//    //pssj100->overallScale = 25.0f;
-//    pssj100->meshFileName = "assets/models/ssj100_xyz_n_rgba_uv.ply";
-//    ::g_vec_pMeshesToDraw.push_back(pssj100);
-//
-//
-//    cMesh* pWarehouse = new cMesh();
-////    pWarehouse->XYZLocation.z = 15.0f;
-//    pWarehouse->bUseModelFileColours = true;
-//    pWarehouse->orientationEulerAngle.y = glm::radians(90.0f);
-//    pWarehouse->meshFileName = "assets/models/Warehouse_xyz_n_rgba_uv.ply";
-//    ::g_vec_pMeshesToDraw.push_back(pWarehouse);
-    
-
-
-    // Make a bunch of airplanes
-//    for (unsigned int count = 0; count != 1000; count++)
-//    {
-//        PlaceAModelInARandomLocation("assets/models/mig29_xyz_n_rgba_uv.ply", 1.0f, 5.0f);
-//    }
-
-//    float extent = 50.0f;
-//    float step = 20.0f;
-//
-//    for ( float x = -extent; x <= extent; x += step )
-//    {
-//        for (float y = -extent; y <= extent; y += step)
-//        {
-//            for (float z = -extent; z <= extent; z += step)
-//            {
-//                cMesh* pMig = new cMesh();
-//                pMig->XYZLocation = glm::vec3(x, y, z);
-//                pMig->RGBA = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-//                pMig->meshFileName = "assets/models/mig29_xyz_n_rgba_uv.ply";
-//                pMig->overallScale = 3.0f;
-//                ::g_vec_pMeshesToDraw.push_back(pMig);
-//            }//for (float z
-//        }//for (float y
-//    }//for ( float x
-
-
-
-//    pMeshSphere->RGBA = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-//    pMeshSphere->XYZLocation = glm::vec3(0.0f, 15.0f, 0.0f);
-//    pMeshSphere->meshFileName = "assets/models/Isoshphere_flat_4div_xyz_n_rgba_uv.ply";
-//    pMeshSphere->bIsWireframe = true;
-//    // Note: I'm NOT including this in the vector of objects to draw
-//
-
-//
-//    pTheLightManager->theLights[0].position = glm::vec4(0.0f, 15.0f, 0.0f, 1.0f);
-////    pTheLightManager->theLights[0].position = glm::vec4(0.0f, 15.0f, 0.0f, 1.0f);
-//    pTheLightManager->theLights[0].diffuse = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-//
-//    pTheLightManager->theLights[0].atten.x = 0.0f;  // Constant
-//    pTheLightManager->theLights[0].atten.y = 0.05f;  // Linear attenuation
-//    pTheLightManager->theLights[0].atten.z = 0.01f;  // Quadratic attenuation
-//
-//    pTheLightManager->theLights[0].param2.x = 1.0f;  // Turn the light on
-//
-//    pTheLightManager->theLights[0].diffuse.r = 1.0f;
-//    pTheLightManager->theLights[0].diffuse.g = 1.0f;
-//    pTheLightManager->theLights[0].diffuse.b = 1.0f;
-//
-//    pTheLightManager->theLights[0].param1.x = 0;    // 0 = Point light, 1 = spot
-//    // If it's a spot light, then we need some angles
-//    pTheLightManager->theLights[0].param1.y = 15.0f; // y = inner angle 
-//    pTheLightManager->theLights[0].param1.z = 15.0f; // z = outer angle
-//    // Point the spot straight down (y is the height axis)
-//    pTheLightManager->theLights[0].direction.x =  0.0f;
-//    pTheLightManager->theLights[0].direction.y = -1.0f;
-//    pTheLightManager->theLights[0].direction.z =  0.0f;
-
-
-
     GLint UseModelFileColour_UL = glGetUniformLocation(shaderProgramNumber, "bUseModelFileColours");
     glUniform1f(UseModelFileColour_UL, (GLfloat)GL_TRUE);
 
@@ -292,6 +174,36 @@ int main(void)
         std::cout << "Light config loaded OK" << std::endl;
     }
 	
+    pTheTexureManager = new cBasicTextureManager();
+
+    loadAllTextures(g_vec_pMeshesToDraw, pTheTexureManager);
+
+    //pTheTexureManager->SetBasePath("assets/textures");
+    //if (!pTheTexureManager->Create2DTextureFromBMPFile("WaterSurfaceTexture.bmp", true))
+    //{
+    //    std::cout << "Error: Didn't load WaterSurfaceTexture.bmp" << std::endl;
+    //}
+	
+
+    //pTheTexureManager->SetBasePath("assets/textures/Dungeons");
+    //if (!pTheTexureManager->Create2DTextureFromBMPFile("Dungeons_2_Texture_01_A_rotated_180_degrees.bmp", true))
+    //{
+    //    std::cout << "Error: Didn't load Dungeons_2_Texture_01_A_rotated_180_degrees.bmp" << std::endl;
+    //}
+
+
+
+
+
+    //pTheTexureManager->SetBasePath("assets/textures/Dungeons");
+    //if (!pTheTexureManager->Create2DTextureFromBMPFile("Texture_01_A.bmp", true))
+    //{
+    //    std::cout << "Error: Didn't load Texture_01_A.bmp" << std::endl;
+    //}
+    //if (!pTheTexureManager->Create2DTextureFromBMPFile("Dungeons_2_Texture_01_A_rotated_180_degrees.bmp", true))
+    //{
+    //    std::cout << "Error: Didn't load Dungeons_2_Texture_01_A_rotated_180_degrees.bmp" << std::endl;
+    //}
 
 
 
@@ -378,10 +290,11 @@ int main(void)
         //█▄▀ ██▄ █▀█ █▀▄   █ █░▀░█ █▄█ █▄█ █   ██▄ █░▀█ █▄▀
 		
 //        mat4x4_ortho(p, -ratio, ratio, -1.f, 1.f, 1.f, -1.f);
+        //FOV
         matProjection = glm::perspective(0.6f,
                              ratio,
                              0.1f,
-                             1000.0f);
+                             3000.0f);
 
         if (::bUseFlyCamera)
         {
@@ -405,11 +318,6 @@ int main(void)
             matView = glm::lookAt( ::g_cameraEye,
                                    cameraTarget,
                                    upVector);
-
-    //        // uniform vec3 eyeLocation;
-    //        GLint eyeLocation_UniformID = glGetUniformLocation(shaderProgramNumber, "eyeLocation");
-    //        glUniform3f(eyeLocation_UniformID,
-    //                    ::g_cameraEye.x, ::g_cameraEye.y, ::g_cameraEye.z);
         }//if (::bUseFlyCamera)
 
 
@@ -452,7 +360,7 @@ int main(void)
         // Checkpoint #8: Draw all the NON-transparent objects
         for (unsigned int index = 0; index != ::g_vec_pMeshesToDraw.size(); index++)
         {
-            if (::g_vec_pMeshesToDraw[index]->RGBA.a == 1.0f) {
+            if (::g_vec_pMeshesToDraw[index]->RGBA.a >= 1.0f) {
                 //sModelDrawInfo modelDrawingInfo;
 
                 cMesh* pCurrentMesh = ::g_vec_pMeshesToDraw[index];
@@ -476,6 +384,10 @@ int main(void)
 		{
 			if (::g_vec_pMeshesToDraw[index]->RGBA.a < 1.0f) {
                 float dis = glm::distance(::g_vec_pMeshesToDraw[index]->XYZLocation, ::g_pFlyCamera->getEye());
+				/*
+                * if the object is closer than the current closest object,
+                * then replace the current closest object with the new one
+                */
 				if(vecTransparentObjects.size() == 0)vecTransparentObjects.push_back(::g_vec_pMeshesToDraw[index]);
                 else if(dis < glm::distance(vecTransparentObjects[0]->XYZLocation, ::g_pFlyCamera->getEye()))
 				{
@@ -485,7 +397,6 @@ int main(void)
 				{
 					vecTransparentObjects.insert(vecTransparentObjects.begin(), ::g_vec_pMeshesToDraw[index]);
 				}
-				
 			}
 		}
 

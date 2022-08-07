@@ -22,9 +22,13 @@ cMesh::cMesh()
 
 	this->uniqueObjectID = cMesh::m_NextID++;
 
+	for (float& ratio : textureRatio)
+	{
+		ratio = 0.0f;
+	}
 }
 
-/*static*/ 
+/*static*/
 const unsigned int STARTING_MESH_UNIQUE_ID = 1000;
 unsigned int cMesh::m_NextID = STARTING_MESH_UNIQUE_ID;
 

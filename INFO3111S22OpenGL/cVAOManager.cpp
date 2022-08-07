@@ -35,9 +35,9 @@ sModelDrawInfo::sModelDrawInfo()
 
 
 bool cVAOManager::LoadModelIntoVAO(
-		std::string fileName, 
-		sModelDrawInfo &drawInfo,
-	    unsigned int shaderProgramID)
+	std::string fileName,
+	sModelDrawInfo& drawInfo,
+	unsigned int shaderProgramID)
 
 {
 	// Load the model from file
@@ -46,12 +46,17 @@ bool cVAOManager::LoadModelIntoVAO(
 
 	drawInfo.meshName = fileName;
 
-	if ( ! this->m_LoadTheModel( fileName, drawInfo ) )
+	//	if ( ! this->m_LoadTheModel( fileName, drawInfo ) )
+	//	{
+	//		this->m_AppendTextToLastError( "Didn't load model", true );
+	//		return false;
+	//	}
+	ePLYFileType fileTypeDetected = ePLYFileType::UNKNOWN_FORMAT;
+	if (!this->m_LoadTheModel_2(fileName, drawInfo, fileTypeDetected))
 	{
-		this->m_AppendTextToLastError( "Didn't load model", true );
+		this->m_AppendTextToLastError("Didn't load model", true);
 		return false;
 	}
-
 	// 
 	// Model is loaded and the vertices and indices are in the drawInfo struct
 	// 
@@ -61,7 +66,7 @@ bool cVAOManager::LoadModelIntoVAO(
 	//	from this buffer...
 
 	// Ask OpenGL for a new buffer ID...
-	glGenVertexArrays( 1, &(drawInfo.VAO_ID) );
+	glGenVertexArrays(1, &(drawInfo.VAO_ID));
 	// "Bind" this buffer:
 	// - aka "make this the 'current' VAO buffer
 	glBindVertexArray(drawInfo.VAO_ID);
@@ -73,28 +78,28 @@ bool cVAOManager::LoadModelIntoVAO(
 
 	// NOTE: OpenGL error checks have been omitted for brevity
 //	glGenBuffers(1, &vertex_buffer);
-	glGenBuffers(1, &(drawInfo.VertexBufferID) );
+	glGenBuffers(1, &(drawInfo.VertexBufferID));
 
-//	glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
+	//	glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
 	glBindBuffer(GL_ARRAY_BUFFER, drawInfo.VertexBufferID);
 	// sVert vertices[3]
-	glBufferData( GL_ARRAY_BUFFER, 
-//				  sizeof(sVert) * drawInfo.numberOfVertices,	// ::g_NumberOfVertsToDraw,	// sizeof(vertices), 
-				  sizeof(sVert_n_rgba_uv) * drawInfo.numberOfVertices,	// ::g_NumberOfVertsToDraw,	// sizeof(vertices), 
-				  (GLvoid*) drawInfo.pVertices,							// pVertices,			//vertices, 
-				  GL_STATIC_DRAW );
+	glBufferData(GL_ARRAY_BUFFER,
+		//				  sizeof(sVert) * drawInfo.numberOfVertices,	// ::g_NumberOfVertsToDraw,	// sizeof(vertices), 
+		sizeof(sVert_n_rgba_uv) * drawInfo.numberOfVertices,	// ::g_NumberOfVertsToDraw,	// sizeof(vertices), 
+		(GLvoid*)drawInfo.pVertices,							// pVertices,			//vertices, 
+		GL_STATIC_DRAW);
 
 
 	// Copy the index buffer into the video card, too
 	// Create an index buffer.
-	glGenBuffers( 1, &(drawInfo.IndexBufferID) );
+	glGenBuffers(1, &(drawInfo.IndexBufferID));
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, drawInfo.IndexBufferID);
 
-	glBufferData( GL_ELEMENT_ARRAY_BUFFER,			// Type: Index element array
-	              sizeof( unsigned int ) * drawInfo.numberOfIndices, 
-	              (GLvoid*) drawInfo.pIndices,
-                  GL_STATIC_DRAW );
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER,			// Type: Index element array
+		sizeof(unsigned int) * drawInfo.numberOfIndices,
+		(GLvoid*)drawInfo.pIndices,
+		GL_STATIC_DRAW);
 
 	// Set the vertex attributes.
 
@@ -117,40 +122,40 @@ bool cVAOManager::LoadModelIntoVAO(
 	// This is called the "vertex layout" and tells the shader
 	// where it's supposed to find the vertex day
 	GLint vPosition_location = glGetAttribLocation(shaderProgramID, "vPosition");	// program
-	glEnableVertexAttribArray(vPosition_location);	
-	glVertexAttribPointer( vPosition_location, 
-						   4,
-						   GL_FLOAT,
-						   GL_FALSE,
-						   sizeof(sVert_n_rgba_uv),		// How many bytes is the "stride" or size of each vertex
-						   (void*) offsetof(sVert_n_rgba_uv, x) );
+	glEnableVertexAttribArray(vPosition_location);
+	glVertexAttribPointer(vPosition_location,
+		4,
+		GL_FLOAT,
+		GL_FALSE,
+		sizeof(sVert_n_rgba_uv),		// How many bytes is the "stride" or size of each vertex
+		(void*)offsetof(sVert_n_rgba_uv, x));
 
 	GLint vRGBA_location = glGetAttribLocation(shaderProgramID, "vRGBA");	// program
 	glEnableVertexAttribArray(vRGBA_location);
 	glVertexAttribPointer(vRGBA_location,
-						   4,
-						   GL_FLOAT,
-						   GL_FALSE,
-						   sizeof(sVert_n_rgba_uv),		// How many bytes is the "stride" or size of each vertex
-						   (void*)offsetof(sVert_n_rgba_uv, r));
+		4,
+		GL_FLOAT,
+		GL_FALSE,
+		sizeof(sVert_n_rgba_uv),		// How many bytes is the "stride" or size of each vertex
+		(void*)offsetof(sVert_n_rgba_uv, r));
 
 	GLint vNormal_location = glGetAttribLocation(shaderProgramID, "vNormal");	// program
 	glEnableVertexAttribArray(vNormal_location);
 	glVertexAttribPointer(vNormal_location,
-						   4,
-						   GL_FLOAT,
-						   GL_FALSE,
-						   sizeof(sVert_n_rgba_uv),		// How many bytes is the "stride" or size of each vertex
-						   (void*)offsetof(sVert_n_rgba_uv, nx));
+		4,
+		GL_FLOAT,
+		GL_FALSE,
+		sizeof(sVert_n_rgba_uv),		// How many bytes is the "stride" or size of each vertex
+		(void*)offsetof(sVert_n_rgba_uv, nx));
 
 	GLint vUV_x2_location = glGetAttribLocation(shaderProgramID, "vUV_x2");	// program
 	glEnableVertexAttribArray(vUV_x2_location);
 	glVertexAttribPointer(vUV_x2_location,
-						   4,
-						   GL_FLOAT,
-						   GL_FALSE,
-						   sizeof(sVert_n_rgba_uv),		// How many bytes is the "stride" or size of each vertex
-						   (void*)offsetof(sVert_n_rgba_uv, u1));
+		4,
+		GL_FLOAT,
+		GL_FALSE,
+		sizeof(sVert_n_rgba_uv),		// How many bytes is the "stride" or size of each vertex
+		(void*)offsetof(sVert_n_rgba_uv, u1));
 
 	// Now that all the parts are set up, set the VAO to zero
 	glBindVertexArray(0);
@@ -158,8 +163,8 @@ bool cVAOManager::LoadModelIntoVAO(
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-//	glDisableVertexAttribArray(vpos_location);
-//	glDisableVertexAttribArray(vcol_location);
+	//	glDisableVertexAttribArray(vpos_location);
+	//	glDisableVertexAttribArray(vcol_location);
 	glDisableVertexAttribArray(vPosition_location);
 	glDisableVertexAttribArray(vRGBA_location);
 	glDisableVertexAttribArray(vNormal_location);
@@ -167,7 +172,7 @@ bool cVAOManager::LoadModelIntoVAO(
 
 
 	// Store the draw information into the map
-	this->m_map_ModelName_to_VAOID[ drawInfo.meshName ] = drawInfo;
+	this->m_map_ModelName_to_VAOID[drawInfo.meshName] = drawInfo;
 
 
 	return true;
@@ -176,15 +181,15 @@ bool cVAOManager::LoadModelIntoVAO(
 
 // We don't want to return an int, likely
 bool cVAOManager::FindDrawInfoByModelName(
-		std::string filename,
-		sModelDrawInfo &drawInfo) 
+	std::string filename,
+	sModelDrawInfo& drawInfo)
 {
 	std::map< std::string /*model name*/,
-			sModelDrawInfo /* info needed to draw*/ >::iterator 
-		itDrawInfo = this->m_map_ModelName_to_VAOID.find( filename );
+		sModelDrawInfo /* info needed to draw*/ >::iterator
+		itDrawInfo = this->m_map_ModelName_to_VAOID.find(filename);
 
 	// Find it? 
-	if ( itDrawInfo == this->m_map_ModelName_to_VAOID.end() )
+	if (itDrawInfo == this->m_map_ModelName_to_VAOID.end())
 	{
 		// Nope
 		return false;
@@ -198,15 +203,15 @@ bool cVAOManager::FindDrawInfoByModelName(
 
 
 bool cVAOManager::m_LoadTheModel(std::string fileName,
-								 sModelDrawInfo &drawInfo )
+	sModelDrawInfo& drawInfo)
 {
 	// Open the file. 
 	// Read until we hit the word "vertex"
 	// Read until we hit the word "face"
 	// Read until we hit the word "end_header"
 
-	std::ifstream thePlyFile( fileName.c_str() );
-	if ( ! thePlyFile.is_open() )
+	std::ifstream thePlyFile(fileName.c_str());
+	if (!thePlyFile.is_open())
 	{	// Something is wrong...
 		std::stringstream ssError;
 		ssError << "Can't open >" << fileName << "< file." << std::endl;
@@ -214,38 +219,38 @@ bool cVAOManager::m_LoadTheModel(std::string fileName,
 		return false;
 	}
 
-	std::string temp; 
-	while ( thePlyFile >> temp )
+	std::string temp;
+	while (thePlyFile >> temp)
 	{
-		if ( temp == "vertex" ) 
+		if (temp == "vertex")
 		{
 			break;
 		}
-	}; 
+	};
 	// read the number of vertices...
 	thePlyFile >> drawInfo.numberOfVertices;	//::g_NumberOfVertices;
 
-	while ( thePlyFile >> temp )
+	while (thePlyFile >> temp)
 	{
-		if ( temp == "face" ) 
+		if (temp == "face")
 		{
 			break;
 		}
-	}; 
+	};
 	// read the number of triangles...
 	thePlyFile >> drawInfo.numberOfTriangles;		// ::g_NumberOfTriangles;
 
 
-	while ( thePlyFile >> temp )
+	while (thePlyFile >> temp)
 	{
-		if ( temp == "end_header" ) 
+		if (temp == "end_header")
 		{
 			break;
 		}
-	}; 
+	};
 
 	// And now, we start reading vertices... Hazzah!
-	
+
 	// This is set up to match the ply (3d model) file. 
 	// NOT the shader. 
 //		ply
@@ -280,24 +285,24 @@ bool cVAOManager::m_LoadTheModel(std::string fileName,
 
 	sVertexPlyFileFormat tempVert;
 	// Load the vertices...
-	for ( unsigned int index = 0; index != drawInfo.numberOfVertices; // ::g_NumberOfVertices; 
-		  index++ )
+	for (unsigned int index = 0; index != drawInfo.numberOfVertices; // ::g_NumberOfVertices; 
+		index++)
 	{
 
-//		property float x
-//		property float y
-//		property float z		
+		//		property float x
+		//		property float y
+		//		property float z		
 		thePlyFile >> tempVert.pos.x >> tempVert.pos.y >> tempVert.pos.z;
 
-//		property float nx
-//		property float ny
-//		property float nz
+		//		property float nx
+		//		property float ny
+		//		property float nz
 		thePlyFile >> tempVert.normal.x >> tempVert.normal.y >> tempVert.normal.z;
 
-//		property uchar red
-//		property uchar green
-//		property uchar blue
-//		property uchar alpha
+		//		property uchar red
+		//		property uchar green
+		//		property uchar blue
+		//		property uchar alpha
 		thePlyFile >> tempVert.colourRGBA.r >> tempVert.colourRGBA.g >> tempVert.colourRGBA.b >> tempVert.colourRGBA.a;
 		// The file has these as 0-255 (one byte) values, 
 		//	but we want them as 0.0 - 1.0 values (for the shader)
@@ -305,10 +310,10 @@ bool cVAOManager::m_LoadTheModel(std::string fileName,
 		tempVert.colourRGBA.g /= 255.0f;
 		tempVert.colourRGBA.b /= 255.0f;
 		tempVert.colourRGBA.a /= 255.0f;
-// 
-//		property float texture_u
-//		property float texture_v
-		// Texture (UV or ST) coordinates are from 0.0 to 1.0 as well
+		// 
+		//		property float texture_u
+		//		property float texture_v
+				// Texture (UV or ST) coordinates are from 0.0 to 1.0 as well
 		thePlyFile >> tempVert.textureCoords.x >> tempVert.textureCoords.y;
 
 
@@ -327,7 +332,7 @@ bool cVAOManager::m_LoadTheModel(std::string fileName,
 	// Optional clear array to zero 
 	//memset( drawInfo.pVertices, 0, sizeof(sVert) * drawInfo.numberOfVertices);
 
-	for ( unsigned int index = 0; index != drawInfo.numberOfVertices; index++ )
+	for (unsigned int index = 0; index != drawInfo.numberOfVertices; index++)
 	{
 		drawInfo.pVertices[index].x = vecTempPlyVerts[index].pos.x;
 		drawInfo.pVertices[index].y = vecTempPlyVerts[index].pos.y;
@@ -364,24 +369,24 @@ bool cVAOManager::m_LoadTheModel(std::string fileName,
 	std::vector<sTriPly> vecTempPlyTriangles;
 	sTriPly tempTriangle;
 	unsigned int discard = 0;
-	for ( unsigned int index = 0; index != drawInfo.numberOfTriangles;	// ::g_NumberOfTriangles; 
-		  index++ )
+	for (unsigned int index = 0; index != drawInfo.numberOfTriangles;	// ::g_NumberOfTriangles; 
+		index++)
 	{
 		// 3 5622 5601 5640
 		thePlyFile >> discard						// the "3" at the start
-			       >> tempTriangle.vindex[0]
-			       >> tempTriangle.vindex[1]
-			       >> tempTriangle.vindex[2];
+			>> tempTriangle.vindex[0]
+			>> tempTriangle.vindex[1]
+			>> tempTriangle.vindex[2];
 
 		//// Look up the vertex that matches the triangle index values.
 		//tempTriangle.verts[0] = vecTempPlyVerts[ tempTriangle.vindex[0] ];
 		//tempTriangle.verts[1] = vecTempPlyVerts[ tempTriangle.vindex[1] ];
 		//tempTriangle.verts[2] = vecTempPlyVerts[ tempTriangle.vindex[2] ];
 
-		vecTempPlyTriangles.push_back( tempTriangle );
+		vecTempPlyTriangles.push_back(tempTriangle);
 	}//for ( unsigned int index...
 
-	
+
 	// NOW, we need to put them into the vertex array buffer that 
 	//	will be passed to OpenGL. Why? 
 	// Because we called glDrawArrays(), that's why. 
@@ -402,9 +407,9 @@ bool cVAOManager::m_LoadTheModel(std::string fileName,
 	// delete pVertices			/// error!
 	// delete [] pVertices		/// correct!!
 	unsigned int indexBufferIndex = 0;
-	for ( unsigned int triIndex = 0; 
-		  triIndex != drawInfo.numberOfTriangles;		// ::g_NumberOfTriangles; 
-		  triIndex++, indexBufferIndex += 3 )
+	for (unsigned int triIndex = 0;
+		triIndex != drawInfo.numberOfTriangles;		// ::g_NumberOfTriangles; 
+		triIndex++, indexBufferIndex += 3)
 	{
 		sTriPly& curTri = vecTempPlyTriangles[triIndex];
 
@@ -438,47 +443,7 @@ bool cVAOManager::m_LoadTheModel(std::string fileName,
 //
 	}// for ( unsigned int triIndex = 0...
 
-	// Calcaulte the "extents" of the model 
-	// "bounding box"
-
-	// Assume vertex #0 is both the smallest and largest values
-	drawInfo.maxValues.x = drawInfo.pVertices[0].x;
-	drawInfo.maxValues.y = drawInfo.pVertices[0].y;
-	drawInfo.maxValues.z = drawInfo.pVertices[0].z;
-
-	drawInfo.minValues.x = drawInfo.pVertices[0].x;
-	drawInfo.minValues.y = drawInfo.pVertices[0].y;
-	drawInfo.minValues.z = drawInfo.pVertices[0].z;
-
-	for (unsigned int index = 0; index != drawInfo.numberOfVertices; index++)
-	{
-		sVert_n_rgba_uv CurrentVertex = drawInfo.pVertices[index];
-
-		if ( CurrentVertex.x > drawInfo.maxValues.x ) {	drawInfo.maxValues.x = CurrentVertex.x;	}
-		if ( CurrentVertex.y > drawInfo.maxValues.y ) {	drawInfo.maxValues.y = CurrentVertex.y;	}
-		if ( CurrentVertex.z > drawInfo.maxValues.z ) {	drawInfo.maxValues.z = CurrentVertex.z;	}
-
-		if ( CurrentVertex.x < drawInfo.minValues.x ) {	drawInfo.minValues.x = CurrentVertex.x;	}
-		if ( CurrentVertex.y < drawInfo.minValues.y ) {	drawInfo.minValues.y = CurrentVertex.y;	}
-		if ( CurrentVertex.z < drawInfo.minValues.z ) {	drawInfo.minValues.z = CurrentVertex.z;	}
-
-	}//for (unsigned int index = 0
-
-	// What's the extent (delta or difference) between these axes
-	drawInfo.maxExtents.x = drawInfo.maxValues.x - drawInfo.minValues.x;
-	drawInfo.maxExtents.y = drawInfo.maxValues.y - drawInfo.minValues.y;
-	drawInfo.maxExtents.z = drawInfo.maxValues.z - drawInfo.minValues.z;
-
-	// Get the largest side;
-	drawInfo.maxExtent = drawInfo.maxExtents.x;
-	if (drawInfo.maxExtents.y > drawInfo.maxExtents.y) 
-	{
-		drawInfo.maxExtent = drawInfo.maxExtent;
-	}
-	if (drawInfo.maxExtents.z > drawInfo.maxExtent) 
-	{
-		drawInfo.maxExtent = drawInfo.maxExtents.z;
-	}
+	this->CalculateExtents(drawInfo);
 
 	return true;
 }
@@ -488,7 +453,7 @@ std::string cVAOManager::getLastError(bool bAndClear /*=true*/)
 {
 	std::string theLastError = this->m_lastErrorString;
 
-	if ( bAndClear )
+	if (bAndClear)
 	{
 		this->m_lastErrorString = "";
 	}
@@ -501,7 +466,7 @@ void cVAOManager::m_AppendTextToLastError(std::string text, bool addNewLineBefor
 	std::stringstream ssError;
 	ssError << this->m_lastErrorString;
 
-	if ( addNewLineBefore )
+	if (addNewLineBefore)
 	{
 		ssError << std::endl;
 	}
@@ -512,4 +477,14 @@ void cVAOManager::m_AppendTextToLastError(std::string text, bool addNewLineBefor
 
 	return;
 
+}
+
+void cVAOManager::GetLoadedModelList(std::vector<std::string>& vecModelList)
+{
+	for (std::map< std::string, sModelDrawInfo>::iterator itModel = this->m_map_ModelName_to_VAOID.begin();
+		itModel != this->m_map_ModelName_to_VAOID.end(); itModel++)
+	{
+		vecModelList.push_back(itModel->first);
+	}
+	return;
 }
