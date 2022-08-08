@@ -22,16 +22,64 @@ public:
 		glm::vec4 atten = glm::vec4(0.0f);
 		glm::vec4 innerOuter = glm::vec4(0.0f);
 		//TODO make operator for comparison
-		//inline bool operator != (const sLightDescription light) const {
-		//	for (int i = 0; i < light.NUMBEROFLIGHTS; ++i) {
-		//		if (light->theLights[i].position != pos) {
-		//			return true;
-		//		}
-		//		if (light->theLights[i].param2.x != on) {
-		//			return true;
-		//		}
-		//	}
-		//}
+		inline bool operator != (const sLightDescription light) const {
+			if (light.position != pos) {
+				return true;
+			}
+			if (light.param2.x != on) {
+				return true;
+			}
+			if(light.diffuse != dif) {
+				return true;
+			}
+			if(light.atten != atten) {
+				return true;
+			}
+			if(light.param1 != innerOuter) {
+				return true;
+			}
+			return false;
+		}
+
+		inline bool operator == (const sLightDescription light) const {
+			if (light.position != pos) {
+				return false;
+			}
+			if (light.param2.x != on) {
+				return false;
+			}
+			if (light.diffuse != dif) {
+				return false;
+			}
+			if (light.atten != atten) {
+				return false;
+			}
+			if (light.param1 != innerOuter) {
+				return false;
+			}
+			return true;
+		}
+		inline bool operator = (const sLightDescription light) {
+			pos = light.position;
+			on = light.param2.x;
+			dif = light.diffuse;
+			atten = light.atten;
+			innerOuter = light.param1;
+			lightType = innerOuter.x;
+			return true;
+		}
+		
+
+	private:
+		inline void reset() {
+			on = true;
+			lightChange = false;
+			lightType = 0;
+			posChange = false;
+			difChange = false;
+			attenChange = false;
+			innerOuterChange = false;
+		}
 	};
 
 	struct ModelValueChanges {
@@ -57,5 +105,6 @@ private:
 	static void ShowMenuFile();
 	
 	static void HelpMarker(const char* desc);
-	static void UpdateValueChanges();
+	static void UpdateModelValueChanges();
+	static void UpdateLightValueChanges();
 };

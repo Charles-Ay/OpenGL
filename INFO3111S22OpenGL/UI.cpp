@@ -239,14 +239,7 @@ void UI::ShowPropertyEditor(bool* p_open)
             s << prefix << std::string(" Objects").c_str();
             ImGui::Text(s.str().c_str());
 
-            //TODO compare values and set to true if they are different
-            // in order to prevent past values from locking the ui
-            
-            //for (int i = 0; i < pTheLightManager->numberOfUsedLights; ++i) {
-            //    if (changes_l[i] != pTheLightManager->theLights[i]) {
 
-            //    }
-            //}
             if (node_open && uid == 0) {
 
                 for (int i = 0; i < g_vec_pMeshesToDraw.size();++i) {
@@ -354,7 +347,13 @@ void UI::ShowPropertyEditor(bool* p_open)
             }
             //Lights
             else if(node_open && uid == 1) {
-				
+
+                for (int i = 0; i < pTheLightManager->numberOfUsedLights; ++i) {
+                    if (changes_l[i] != pTheLightManager->theLights[i]) {
+                        changes_l[i] = pTheLightManager->theLights[i];
+                    }
+                }
+
                 for (int i = 0; i < pTheLightManager->numberOfUsedLights; ++i) {
 					//add light attributes to gui
                     std::stringstream ss;
@@ -500,10 +499,12 @@ void UI::ShowPropertyEditor(bool* p_open)
     for (int obj_i = 0; obj_i < 2; obj_i++) {
         if (obj_i == 0) {
 			func::ShowObject("Mesh", obj_i);
+            UpdateModelValueChanges();
 		} else {
 			func::ShowObject("Light", obj_i);
+            UpdateLightValueChanges();
         }
-        UpdateValueChanges();
+        
     }
 
     ImGui::Columns(1);
@@ -541,7 +542,7 @@ void UI::HelpMarker(const char* desc)
     }
 }
 
-void UI::UpdateValueChanges() {
+void UI::UpdateModelValueChanges() {
     for (int i = 0; i < g_vec_pMeshesToDraw.size(); ++i) {
         glm::vec3 empty = glm::vec3(0.0f, 0.0f, 0.0f);
         glm::vec4 empty2 = glm::vec4(0.0f, 0.0f, 0.0f, 0.0f);
@@ -554,14 +555,17 @@ void UI::UpdateValueChanges() {
         if (changes_m[i].color != empty2)
             g_vec_pMeshesToDraw[i]->RGBA = glm::vec4(changes_m[i].color.r, changes_m[i].color.g, changes_m[i].color.b, changes_m[i].transparancy);
     }
-	
+}
+
+void UI::UpdateLightValueChanges() {
     for (int i = 0; i < pTheLightManager->numberOfUsedLights; ++i) {
-		glm::vec4 empty = glm::vec4(0.0f, 0.0f, 0.0f, 0.0f);
-		if(changes_l[i].pos != empty) pTheLightManager->theLights[i].position = changes_l[i].pos;
-        if (changes_l[i].dif != empty)pTheLightManager->theLights[i].diffuse = changes_l[i].dif;
-        if (changes_l[i].atten != empty)pTheLightManager->theLights[i].atten = changes_l[i].atten;
-        if (changes_l[i].innerOuter != empty)pTheLightManager->theLights[i].param1 = changes_l[i].innerOuter;
-        pTheLightManager->theLights[i].param2.x = changes_l[i].on;
-        pTheLightManager->theLights[i].MoveToTarget();
+        if (changes_l[i] != pTheLightManager->theLights[i]) {
+            glm::vec4 empty = glm::vec4(0.0f, 0.0f, 0.0f, 0.0f);
+            if (changes_l[i].pos != empty) pTheLightManager->theLights[i].position = changes_l[i].pos;
+            if (changes_l[i].dif != empty)pTheLightManager->theLights[i].diffuse = changes_l[i].dif;
+            if (changes_l[i].atten != empty)pTheLightManager->theLights[i].atten = changes_l[i].atten;
+            if (changes_l[i].innerOuter != empty)pTheLightManager->theLights[i].param1 = changes_l[i].innerOuter;
+        }
+
     }
 }
