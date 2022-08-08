@@ -197,7 +197,7 @@ bool SaveSceneToFile(std::string sceneFileName, std::string& error)
 		if (pCurrentMesh->bIsWireframe)sceneFile << "is_wireframe\n";
 		if (!pCurrentMesh->textures[0].empty()) {
 			sceneFile << "has_texture\n";
-			sceneFile << pCurrentMesh->texturePath;
+			sceneFile << pCurrentMesh->texturePath << "\n";
 
 			for (int i = 0; i < pCurrentMesh->usedTextures; ++i) {
 				sceneFile << pCurrentMesh->textures[i] << "   ";

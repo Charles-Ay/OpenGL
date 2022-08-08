@@ -324,21 +324,21 @@ void AsyncKeyboardHandlingUpdate(GLFWwindow* window, cVAOManager& pVAOManager)
                 }// We AREN'T holding JUST the shift key
 
             }// if (bUseFlyCamera)
-            if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {
-                std::string error;
-                pTheLightManager->SaveLightConfigToFile(*pTheLightManager, "assets/saves/LightConfigSaveFile.txt", error);
-                std::cout << "Lights saved to file";
-            }
-            if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS) {
-                std::string error;
-                SaveSceneToFile("assets/saves/SaveFile.txt", error);
-                std::cout << "Scene saved to file";
-            }
-            if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS) {
-                std::string error;
-                SaveCamaeraToFile("assets/saves/CameraSaveFile.txt");
-                std::cout << "Camera saved to file";
-            }
+            //if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {
+            //    std::string error;
+            //    pTheLightManager->SaveLightConfigToFile(*pTheLightManager, "assets/saves/LightConfigSaveFile.txt", error);
+            //    std::cout << "Lights saved to file";
+            //}
+            //if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS) {
+            //    std::string error;
+            //    SaveSceneToFile("assets/saves/SaveFile.txt", error);
+            //    std::cout << "Scene saved to file";
+            //}
+            //if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS) {
+            //    std::string error;
+            //    SaveCamaeraToFile("assets/saves/CameraSaveFile.txt");
+            //    std::cout << "Camera saved to file";
+            //}
         }// if ( AreAllModifiersUp( window ) )
 
     }

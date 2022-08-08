@@ -8,7 +8,8 @@ assets/models/Seafloor2_xyz_n_rgba_uv.ply
 0   0   0
 1
 has_texture
-assets/texturesWaterSurfaceTexture.bmp   
+assets/textures
+WaterSurfaceTexture.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
@@ -17,7 +18,8 @@ assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 0   0   0
 0.35
 has_texture
-assets/textures/DungeonsDungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
@@ -26,7 +28,8 @@ assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 0   0   0
 0.35
 has_texture
-assets/textures/DungeonsTexture_01_A_rotated_180_degrees.bmp   
+assets/textures/Dungeons
+Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
@@ -35,7 +38,8 @@ assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 0   0   0
 0.35
 has_texture
-assets/textures/DungeonsTexture_02_A_rotated_180_degrees.bmp   
+assets/textures/Dungeons
+Texture_02_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
@@ -44,6 +48,7 @@ assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 0   0   0
 0.35
 has_texture
-assets/textures/DungeonsTexture_03_A_rotated_180_degrees.bmp   
+assets/textures/Dungeons
+Texture_03_A_rotated_180_degrees.bmp   
 texture_end
 1   

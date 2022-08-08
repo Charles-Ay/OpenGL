@@ -238,6 +238,15 @@ void UI::ShowPropertyEditor(bool* p_open)
             std::stringstream s;
             s << prefix << std::string(" Objects").c_str();
             ImGui::Text(s.str().c_str());
+
+            //TODO compare values and set to true if they are different
+            // in order to prevent past values from locking the ui
+            
+            //for (int i = 0; i < pTheLightManager->numberOfUsedLights; ++i) {
+            //    if (changes_l[i] != pTheLightManager->theLights[i]) {
+
+            //    }
+            //}
             if (node_open && uid == 0) {
 
                 for (int i = 0; i < g_vec_pMeshesToDraw.size();++i) {

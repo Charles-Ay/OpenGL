@@ -1,6 +1,7 @@
 #pragma once
 #include <cstddef>
 #include "include/glm/glm.hpp"
+#include "cLightManager.h"
 
 class UI
 {
@@ -20,6 +21,17 @@ public:
 		glm::vec4 dif = glm::vec4(0.0f);
 		glm::vec4 atten = glm::vec4(0.0f);
 		glm::vec4 innerOuter = glm::vec4(0.0f);
+		//TODO make operator for comparison
+		//inline bool operator != (const sLightDescription light) const {
+		//	for (int i = 0; i < light.NUMBEROFLIGHTS; ++i) {
+		//		if (light->theLights[i].position != pos) {
+		//			return true;
+		//		}
+		//		if (light->theLights[i].param2.x != on) {
+		//			return true;
+		//		}
+		//	}
+		//}
 	};
 
 	struct ModelValueChanges {
