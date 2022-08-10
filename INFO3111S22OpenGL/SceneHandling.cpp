@@ -262,3 +262,24 @@ glm::vec3 LoadCameraFromFile(std::string cameraFileName)
 	file.close();
 	return glm::vec3(x, y, z);
 }
+
+// Returns 0 or NULL (or nullptr) if NOT found
+cMesh* g_findObjectByFriendlyName(std::string theName)
+{
+	for (unsigned int index = 0; index != ::g_vec_pMeshesToDraw.size(); index++)
+	{
+		// Is this it? 
+		cMesh* pTestObject = ::g_vec_pMeshesToDraw[index];
+
+		if (pTestObject->friendlyName == theName)
+		{
+			return pTestObject;
+		}
+	}
+
+	// Nope. It's not there. Sorry.
+	return NULL;
+}
+
+
+bool g_findObjectByFriendlyName(std::string theName, cMesh* theObjectIFound);

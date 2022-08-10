@@ -161,6 +161,22 @@ void AsyncKeyboardHandlingUpdate(GLFWwindow* window, cVAOManager& pVAOManager)
             { ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.x -= objectMovementSpeed; }
             if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) 
             { ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.x += objectMovementSpeed; }
+            if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+            {
+                ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.z -= objectMovementSpeed;
+            }
+            if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+            {
+                ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.z += objectMovementSpeed;
+            }
+            if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
+            {
+                ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.y -= objectMovementSpeed;
+            }
+            if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS)
+            {
+                ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.y += objectMovementSpeed;
+            }
 
             //if (key == GLFW_KEY_D) { ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.x += objectMovementSpeed; }
             //if (key == GLFW_KEY_W) { ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.z -= objectMovementSpeed; }
@@ -171,12 +187,12 @@ void AsyncKeyboardHandlingUpdate(GLFWwindow* window, cVAOManager& pVAOManager)
         if ( glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS )
         {
             // Move the object
-            //if (key == GLFW_KEY_A) { ::g_vec_pMeshesToDraw[objectIDToMove]->orientationEulerAngle.x -= objectRotationSpeed; }
-            //if (key == GLFW_KEY_D) { ::g_vec_pMeshesToDraw[objectIDToMove]->orientationEulerAngle.x += objectRotationSpeed; }
-            //if (key == GLFW_KEY_W) { ::g_vec_pMeshesToDraw[objectIDToMove]->orientationEulerAngle.z -= objectRotationSpeed; }
-            //if (key == GLFW_KEY_S) { ::g_vec_pMeshesToDraw[objectIDToMove]->orientationEulerAngle.z += objectRotationSpeed; }
-            //if (key == GLFW_KEY_Q) { ::g_vec_pMeshesToDraw[objectIDToMove]->orientationEulerAngle.y -= objectRotationSpeed; }
-            //if (key == GLFW_KEY_E) { ::g_vec_pMeshesToDraw[objectIDToMove]->orientationEulerAngle.y += objectRotationSpeed; }
+            if (glfwGetKey(window, GLFW_KEY_A)) { ::g_vec_pMeshesToDraw[objectIDToMove]->orientationEulerAngle.x -= objectRotationSpeed; }
+            if (glfwGetKey(window, GLFW_KEY_D)) { ::g_vec_pMeshesToDraw[objectIDToMove]->orientationEulerAngle.x += objectRotationSpeed; }
+            if (glfwGetKey(window, GLFW_KEY_W)) { ::g_vec_pMeshesToDraw[objectIDToMove]->orientationEulerAngle.z -= objectRotationSpeed; }
+            if (glfwGetKey(window, GLFW_KEY_S)) { ::g_vec_pMeshesToDraw[objectIDToMove]->orientationEulerAngle.z += objectRotationSpeed; }
+            if (glfwGetKey(window, GLFW_KEY_Q)) { ::g_vec_pMeshesToDraw[objectIDToMove]->orientationEulerAngle.y -= objectRotationSpeed; }
+            if (glfwGetKey(window, GLFW_KEY_E)) { ::g_vec_pMeshesToDraw[objectIDToMove]->orientationEulerAngle.y += objectRotationSpeed; }
         }
         if ( glfwGetKey(window, GLFW_KEY_LEFT_ALT) == GLFW_PRESS )
         {

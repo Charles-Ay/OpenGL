@@ -43,9 +43,27 @@ uniform bool bDontUseTextureColour;
 
 uniform sampler2D texture01;
 uniform sampler2D texture02; 
+uniform sampler2D texture03; 
+uniform sampler2D texture04; 
+// These aren't completely set up, yet... (that's for you to figure out)
+uniform sampler2D texture05;
+uniform sampler2D texture06; 
+uniform sampler2D texture07; 
+uniform sampler2D texture08; // Note you can't have an array of texture because that's The Way It Is
+//uniform sampler2D mytextures[4];
+// There is a "sampler array" but it's not what you think... 
+//uniform sampler2DArray myTextures;
 
-uniform float texture01Ratio;
-uniform float texture02Ratio;
+uniform bool bUseStencil;
+uniform sampler2D stencilTexture01;
+
+
+//uniform float texture01Ratio;
+//uniform float texture02Ratio;
+//uniform float texture03Ratio;
+//uniform float texture04Ratio;
+uniform vec4 texture01to04Ratio;  // x is #0, y is #1, and so on
+uniform vec4 texture05to08Ratio;  // x is #0, y is #1, and so on
 
 
 // function signature, just like C or C++
@@ -68,6 +86,26 @@ void main()
 		return;
 	}
 	
+	// Discard transparency example
+	if ( bUseStencil )
+	{
+//		vec3 stencil01Colour = texture( stencilTexture01, fUV_x2.xy ).rgb;  
+		// This will be black or white. 
+		// So we could average the samples colour, or we could only sample part of it
+		float stencil01Colour = texture( stencilTexture01, fUV_x2.xy ).r; 
+		
+		// is it black or white
+		if ( stencil01Colour < 0.5f) 
+		{	// Let's say that's black
+			discard;
+		}
+		else
+		{	// else it's white (> 0.5f)
+		}			
+		
+	}//if ( bUseStencil )
+
+	
 	vec3 vertexColour = vec3(0.0f, 0.0f, 0.0f);
 	
 	if (bDontUseTextureColour)
@@ -79,12 +117,22 @@ void main()
 	{
 	
 		// Texture stuff (sampling)
-		vec3 texture01Colour = texture( texture01, fUV_x2.xy ).rgb;
+		vec3 texture01Colour = texture( texture01, fUV_x2.xy ).rgb;  
+		vec3 texture02Colour = texture( texture02, fUV_x2.xy ).rgb;	
+		vec3 texture03Colour = texture( texture03, fUV_x2.xy ).rgb;	
+		vec3 texture04Colour = texture( texture04, fUV_x2.xy ).rgb;	
 		
-		vertexColour.rgb = texture01Colour.rgb;
+//		vertexColour.rgb = texture01Colour.rgb;
 
 //		vertexColour.rgb =   (texture01Colour.rgb * texture01Ratio) 
-//							+(texture02Colour.rgb * texture02Ratio) 
+//						   + (texture02Colour.rgb * texture02Ratio) 
+//						   + (texture03Colour.rgb * texture03Ratio) 
+//						   + (texture04Colour.rgb * texture04Ratio) 
+
+		vertexColour.rgb =   (texture01Colour.rgb * texture01to04Ratio.x) 
+						   + (texture02Colour.rgb * texture01to04Ratio.y) 
+						   + (texture03Colour.rgb * texture01to04Ratio.z) 
+						   + (texture04Colour.rgb * texture01to04Ratio.w); 
 	}
 	
 //	outputColour.rgb = texture01SampledPixelColour.rgb;

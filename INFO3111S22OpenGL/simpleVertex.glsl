@@ -27,10 +27,19 @@ out vec4 fUV_x2;
 out vec4 vertexWorldPosition;
 out mat4 matModelInvTrans;		// Used for lighting
 
+uniform bool bUseHeightMap;
+uniform sampler2D heightMapTexture;
+
 void main()
 {
     vec3 vFinalPosition = vPosition.xyz;
 
+	if (bUseHeightMap)
+	{
+		float heightDisplacement = texture( heightMapTexture, vUV_x2.xy ).r;
+		vFinalPosition.y += heightDisplacement * 100.0f;
+	}
+	
 //    vFinalPosition.x -= 1.75f;
 
 // Original line from the C++ side: 
@@ -42,6 +51,9 @@ void main()
     gl_Position = mMVP * vec4(vFinalPosition, 1.0);
 
 	vertexWorldPosition = mModel * vec4(vFinalPosition, 1.0);
+	
+	
+	
 
 	// Also rotate the normal with the model matrix
 	// The inverse transpose of the model matrix removes
