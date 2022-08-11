@@ -152,7 +152,6 @@ int main(void)
     pTheLightManager = new cLightManager();
     pMeshSphere = new cMesh();
 
-
 	
     GLint UseModelFileColour_UL = glGetUniformLocation(shaderProgramNumber, "bUseModelFileColours");
     glUniform1f(UseModelFileColour_UL, (GLfloat)GL_TRUE);
@@ -204,7 +203,12 @@ int main(void)
     //{
     //    std::cout << "Error: Didn't load Dungeons_2_Texture_01_A_rotated_180_degrees.bmp" << std::endl;
     //}
-
+	
+    //::pTheTexureManager->SetBasePath("assets/textures");
+    //if (!::pTheTexureManager->Create2DTextureFromBMPFile("cat.bmp", true))
+    //{
+    //    std::cout << "Error: Didn't load cat.bmp" << std::endl;
+    //}
 
 
     //█▀▄ █▀▀ ▄▀█ █▀█   █ █▀▄▀█ █▀▀ █░█ █   █▀▀ █▀█ █▄░█ ▀█▀ █▀▀ ▀▄▀ ▀█▀
@@ -363,8 +367,15 @@ int main(void)
             if (::g_vec_pMeshesToDraw[index]->RGBA.a >= 1.0f) {
                 //sModelDrawInfo modelDrawingInfo;
 
-                cMesh* pCurrentMesh = ::g_vec_pMeshesToDraw[index];
 
+                cMesh* pCurrentMesh = ::g_vec_pMeshesToDraw[index];
+                ////HACK: FOR DISCARD TRASNP
+                //if (index == 0) {
+                //    // This is being used for discard transparency
+
+					
+                //    pCurrentMesh->friendlyName = "SeaFloor";
+                //}
                 //        mat4x4_identity(m);
                 matModel = glm::mat4x4(1.0f);
 

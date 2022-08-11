@@ -187,7 +187,7 @@ void DrawObject(cMesh* pCurrentMesh, GLuint shaderProgramNumber, cVAOManager* pV
             glActiveTexture(textureUnit + GL_TEXTURE0);	// GL_TEXTURE0 = 33984
 
             // Setup the texture bindings
-            GLuint stencilTextureID = ::pTheTexureManager->getTextureIDFromName("Catcher_Stencil.bmp");
+            GLuint stencilTextureID = ::pTheTexureManager->getTextureIDFromName("cat.bmp");
             glBindTexture(GL_TEXTURE_2D, stencilTextureID);
 
             // glBindTextureUnit( texture00Unit, texture00Number );	// OpenGL 4.5+ only
