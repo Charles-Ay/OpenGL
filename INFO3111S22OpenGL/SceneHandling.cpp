@@ -17,6 +17,9 @@ extern std::vector< cMesh* > g_vec_pMeshesToDraw;
 extern glm::vec3 g_cameraEye;
 extern cFlyCamera* g_pFlyCamera;
 
+std::vector<std::string> diagram;
+
+//get current path
 std::string dir() {
 	char cCurrentPath[FILENAME_MAX];
 
@@ -90,8 +93,18 @@ bool LoadAllTheModels(std::string sceneFileName,
 		unsigned int numberOfModelsLoaded = 0;
 		while (numberOfModelsLoaded < numberOfModelsToLoad)
 		{
-			dir();
 			cMesh* mesh = new cMesh();
+
+			sceneFile >> tmp;
+			if (tmp == "COMMENT_START") {
+				while (tmp != "COMMENT_END") {
+					sceneFile >> tmp;
+				}
+				sceneFile >> tmp;
+			}
+			else 
+				mesh->meshFileName;
+			
 			if (tmp != "")mesh->meshFileName = tmp;
 			else sceneFile >> mesh->meshFileName;
 			if (mesh->meshFileName == "")break;
@@ -101,6 +114,7 @@ bool LoadAllTheModels(std::string sceneFileName,
 				std::cout << error << std::endl;
 				return false;
 			}
+			
 			sceneFile >> mesh->XYZLocation.x;
 			sceneFile >> mesh->XYZLocation.y;
 			sceneFile >> mesh->XYZLocation.z;
@@ -113,11 +127,22 @@ bool LoadAllTheModels(std::string sceneFileName,
 			sceneFile >> mesh->orientationEulerAngle.z;
 			sceneFile >> mesh->overallScale;
 			sceneFile >> tmp;
+
+			/*
+			* order is:
+			* friendly
+			* wire
+			* texture
+			*/
+			if (tmp == "has_friendly") {
+				sceneFile >> tmp;
+				mesh->friendlyName = tmp;
+				sceneFile >> tmp;
+			}
 			if (tmp == "is_wireframe") {
 				mesh->bIsWireframe = true;
+				sceneFile >> tmp;
 			}
-			if (tmp == "is_wireframe") sceneFile >> tmp;
-
 			if (tmp == "has_texture") {
 				sceneFile >> mesh->texturePath;
 				int txtAmt = 0;
@@ -184,6 +209,17 @@ bool SaveSceneToFile(std::string sceneFileName, std::string& error)
 	}
 
 	sceneFile << g_vec_pMeshesToDraw.size() << "\n";
+	sceneFile << "COMMENT_START" << "\n";
+	sceneFile << "XYZLocation.x   XYZLocation.y   XYZLocation.z" << "\n";
+	sceneFile << "RGBA.x   RGBA.y   RGBA.z   RGBA.a" << "\n";
+	sceneFile << "orientationEulerAngle.x   orientationEulerAngle.y   orientationEulerAngle.z" << "\n";
+	sceneFile << "overallScale" << "\n";
+	sceneFile << "EXTRA: " << "\n";
+	sceneFile << "WALL AND FLOOR WIDTH IS 175" << "\n";
+	sceneFile << "ARCH INSTEAD OF DOOR FOR NOW" << "\n";
+	sceneFile << "EMPTY FLOOR INSTEAD OF STAIRS FOR NOW(#13 & #14)" << "\n";
+	sceneFile << "COMMENT_END" << "\n";
+	
 	for (unsigned int index = 0; index != g_vec_pMeshesToDraw.size(); index++) {
 		cMesh* pCurrentMesh = g_vec_pMeshesToDraw.at(index);
 		sceneFile << pCurrentMesh->meshFileName << "\n";
@@ -195,6 +231,7 @@ bool SaveSceneToFile(std::string sceneFileName, std::string& error)
 			<< "   " << pCurrentMesh->orientationEulerAngle.z << "\n";
 		sceneFile << pCurrentMesh->overallScale << "\n";
 		if (pCurrentMesh->bIsWireframe)sceneFile << "is_wireframe\n";
+		if(pCurrentMesh->friendlyName != "")sceneFile << "has_friendly   " << pCurrentMesh->friendlyName << "\n";
 		if (!pCurrentMesh->textures[0].empty()) {
 			sceneFile << "has_texture\n";
 			sceneFile << pCurrentMesh->texturePath << "\n";
@@ -281,5 +318,273 @@ cMesh* g_findObjectByFriendlyName(std::string theName)
 	return NULL;
 }
 
+bool LoadModelDiagram(std::string sceneFileName, std::string error) {
+	if (exists_test(dir() + "\\" + sceneFileName)) {
+		std::ifstream sceneFile(sceneFileName.c_str());
+		std::string line;
+		int numObjects = 0;
+		while (line[0] != '_') {
+			sceneFile >> line;
+		}
+		diagram.insert(diagram.begin(), line + "\n");
+		while (numObjects < 9) {
+			sceneFile >> line;
+			diagram.insert(diagram.begin(), line + "\n");
+			++numObjects;
+		}
+		if (diagram[0] != "") {
+			return true;
+		}
+		return false;
+	}
+	else {
+		std::cout << "Can't find file " << sceneFileName << "\n";
+		return false;
+	}
+}
+
+bool LoadModelDiagramAndModels(std::string sceneFileName,
+	cVAOManager* pVAOManager,
+	unsigned int shaderProgramID,
+	std::string& error) {
+	if (!LoadModelDiagram(sceneFileName, error)) {
+		return false;
+	}
+	
+	int total = 0;
+	int numObjects = 0;
+	float prevWallW = .0f;
+	float prevFloorW = .0f;
+	float prevWallH = .0f;
+	float prevFloorH = .0f;
+	float heightConstant= 0.f;
+
+	sModelDrawInfo drawInfo;
+
+	{
+		std::string m1 = "assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply";
+		std::string m2 = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply";
+		std::string m3 = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Archway_01.ply";
+		std::string m4 = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply";
+
+		pVAOManager->LoadModelIntoVAO(m1, drawInfo, shaderProgramID);
+		pVAOManager->LoadModelIntoVAO(m2, drawInfo, shaderProgramID);
+		pVAOManager->LoadModelIntoVAO(m3, drawInfo, shaderProgramID);
+		pVAOManager->LoadModelIntoVAO(m4, drawInfo, shaderProgramID);
+	}
+
+	
+	
+	while (numObjects < 9) {
+		std::string line = diagram[numObjects];
+		for (unsigned i = 0; i < line.size(); ++i) {
+			if (line[i] == '_') {
+
+				//floor
+				cMesh* pMesh = new cMesh();
+				pMesh->meshFileName = "assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply";
+				pMesh->XYZLocation = glm::vec3(-74.f, 10.f, -338.f);
+				//floor width
+				if (i > 0) {
+					pMesh->XYZLocation.x = prevFloorW + 175;
+					prevFloorW = pMesh->XYZLocation.x;
+				}
+				else {
+					prevFloorW = pMesh->XYZLocation.x;
+				}
+				if(numObjects > 0)
+					pMesh->XYZLocation.y += heightConstant;
+
+				pMesh->RGBA = glm::vec4(1.f, 1.f, 1.f, 1.f);
+				pMesh->orientationEulerAngle = glm::vec3(.0f, .0f, .0f);
+				pMesh->overallScale = 0.35f;
+				pMesh->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",Floor:" + std::to_string(i + 1);
+				pMesh->texturePath = "assets/textures/Dungeons";
+				pMesh->textures[0] = "Dungeons_2_Texture_01_A_rotated_180_degrees.bmp";
+				pMesh->textureRatio[0] = 1;
+				pMesh->usedTextures = 1;
+				g_vec_pMeshesToDraw.push_back(pMesh);
+
+
+
+				//wall
+				cMesh* pMesh2 = new cMesh();
+				pMesh2->meshFileName = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply";
+				pMesh2->XYZLocation = glm::vec3(-249.f, 3.5f, -509.f);
+				//wall width
+				if (i > 0) {
+					pMesh2->XYZLocation.x = prevWallW + 175;
+					prevWallW = pMesh2->XYZLocation.x;
+				}
+				else {
+					prevWallW = pMesh2->XYZLocation.x;
+				}
+				if (numObjects > 0)
+					pMesh2->XYZLocation.y += heightConstant;
+
+				pMesh2->RGBA = glm::vec4(1.f, 1.f, 1.f, 1.f);
+				pMesh2->orientationEulerAngle = glm::vec3(.0f, 3.15f, .0f);
+				pMesh2->overallScale = 0.35f;
+				pMesh2->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",Wall:" + std::to_string(i + 1);
+				pMesh2->texturePath = "assets/textures/Dungeons";
+				pMesh2->textures[0] = "Dungeons_2_Texture_01_A_rotated_180_degrees.bmp";
+				pMesh2->textureRatio[0] = 1;
+				pMesh2->usedTextures = 1;
+				g_vec_pMeshesToDraw.push_back(pMesh2);
+				++total;
+			}
+			else if (line[i] == '.') {
+				//wall
+				cMesh* pMesh2 = new cMesh();
+				pMesh2->meshFileName = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply";
+				pMesh2->XYZLocation = glm::vec3(-249.f, 3.5f, -509.f);
+				//wall width
+				if (i > 0) {
+					pMesh2->XYZLocation.x = prevWallW + 175;
+					prevWallW = pMesh2->XYZLocation.x;
+				}
+				else {
+					prevWallW = pMesh2->XYZLocation.x;
+				}
+				
+				if (numObjects > 0) {
+					pMesh2->XYZLocation.y += heightConstant;
+				}
+				
+				pMesh2->RGBA = glm::vec4(1.f, 1.f, 1.f, 1.f);
+				pMesh2->orientationEulerAngle = glm::vec3(.0f, 3.15f, .0f);
+				pMesh2->overallScale = 0.35f;
+				pMesh2->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",Wall:" + std::to_string(i + 1);
+				pMesh2->texturePath = "assets/textures/Dungeons";
+				pMesh2->textures[0] = "Dungeons_2_Texture_01_A_rotated_180_degrees.bmp";
+				pMesh2->textureRatio[0] = 1;
+				pMesh2->usedTextures = 1;
+				g_vec_pMeshesToDraw.push_back(pMesh2);
+				++total;
+			}
+			else if (line[i] == '\n') { 
+				heightConstant += 175.f; 
+			}
+			else if (line[i] == 'd') {
+				//floor
+				cMesh* pMesh = new cMesh();
+				pMesh->meshFileName = "assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply";
+				pMesh->XYZLocation = glm::vec3(-74.f, 10.f, -338.f);
+				//floor width
+				if (i > 0) {
+					pMesh->XYZLocation.x = prevFloorW + 175;
+					prevFloorW = pMesh->XYZLocation.x;
+				}
+				else {
+					prevFloorW = pMesh->XYZLocation.x;
+				}
+				if (numObjects > 0)
+					pMesh->XYZLocation.y += heightConstant;
+
+				pMesh->RGBA = glm::vec4(1.f, 1.f, 1.f, 1.f);
+				pMesh->orientationEulerAngle = glm::vec3(.0f, .0f, .0f);
+				pMesh->overallScale = 0.35f;
+				pMesh->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",DoorFloor:" + std::to_string(i + 1);
+				pMesh->texturePath = "assets/textures/Dungeons";
+				pMesh->textures[0] = "Dungeons_2_Texture_01_A_rotated_180_degrees.bmp";
+				pMesh->textureRatio[0] = 1;
+				pMesh->usedTextures = 1;
+				g_vec_pMeshesToDraw.push_back(pMesh);
+
+
+
+				//wall
+				cMesh* pMesh2 = new cMesh();
+				pMesh2->meshFileName = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Archway_01.ply";
+				pMesh2->XYZLocation = glm::vec3(-249.f, 3.5f, -509.f);
+				//wall width
+				if (i > 0) {
+					pMesh2->XYZLocation.x = prevWallW + 175;
+					prevWallW = pMesh2->XYZLocation.x;
+				}
+				else {
+					prevWallW = pMesh2->XYZLocation.x;
+				}
+				if (numObjects > 0)
+					pMesh2->XYZLocation.y += heightConstant;
+
+				pMesh2->RGBA = glm::vec4(1.f, 1.f, 1.f, 1.f);
+				pMesh2->orientationEulerAngle = glm::vec3(.0f, 3.15f, .0f);
+				pMesh2->overallScale = 0.35f;
+				pMesh2->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",Door:" + std::to_string(i + 1);
+				pMesh2->texturePath = "assets/textures/Dungeons";
+				pMesh2->textures[0] = "Dungeons_2_Texture_01_A_rotated_180_degrees.bmp";
+				pMesh2->textureRatio[0] = 1;
+				pMesh2->usedTextures = 1;
+				g_vec_pMeshesToDraw.push_back(pMesh2);
+				++total;
+			}
+			else if (line[i] == 's') {
+				prevFloorW = prevFloorW + 175;
+
+				//wall
+				cMesh* pMesh2 = new cMesh();
+				pMesh2->meshFileName = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply";
+				pMesh2->XYZLocation = glm::vec3(-249.f, 3.5f, -509.f);
+				//wall width
+				if (i > 0) {
+					pMesh2->XYZLocation.x = prevWallW + 175;
+					prevWallW = pMesh2->XYZLocation.x;
+				}
+				else {
+					prevWallW = pMesh2->XYZLocation.x;
+				}
+				if (numObjects > 0)
+					pMesh2->XYZLocation.y += heightConstant;
+
+				pMesh2->RGBA = glm::vec4(1.f, 1.f, 1.f, 1.f);
+				pMesh2->orientationEulerAngle = glm::vec3(.0f, 3.15f, .0f);
+				pMesh2->overallScale = 0.35f;
+				pMesh2->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",Stair:" + std::to_string(i + 1);
+				pMesh2->texturePath = "assets/textures/Dungeons";
+				pMesh2->textures[0] = "Dungeons_2_Texture_01_A_rotated_180_degrees.bmp";
+				pMesh2->textureRatio[0] = 1;
+				pMesh2->usedTextures = 1;
+				g_vec_pMeshesToDraw.push_back(pMesh2);
+				++total;
+			}
+			else if (line[i] == 'w') {
+				//wall
+				cMesh* pMesh2 = new cMesh();
+				pMesh2->meshFileName = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply";
+				pMesh2->XYZLocation = glm::vec3(-249.f, 3.5f, -509.f);
+				//wall width
+				if (i > 0) {
+					pMesh2->XYZLocation.x = prevWallW + 175;
+					prevWallW = pMesh2->XYZLocation.x;
+				}
+				else {
+					prevWallW = pMesh2->XYZLocation.x;
+				}
+
+				if (numObjects > 0) {
+					pMesh2->XYZLocation.y += heightConstant;
+				}
+
+				pMesh2->RGBA = glm::vec4(1.f, 1.f, 1.f, 1.f);
+				pMesh2->orientationEulerAngle = glm::vec3(.0f, 3.15f, .0f);
+				pMesh2->overallScale = 0.35f;
+				pMesh2->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",Wall:" + std::to_string(i + 1);
+				pMesh2->texturePath = "assets/textures/Dungeons";
+				pMesh2->textures[0] = "Dungeons_2_Texture_01_A_rotated_180_degrees.bmp";
+				pMesh2->textureRatio[0] = 1;
+				pMesh2->usedTextures = 1;
+				g_vec_pMeshesToDraw.push_back(pMesh2);
+				++total;
+			}
+
+		}
+
+
+
+		++numObjects;
+		++total;
+	}
+}
 
 bool g_findObjectByFriendlyName(std::string theName, cMesh* theObjectIFound);

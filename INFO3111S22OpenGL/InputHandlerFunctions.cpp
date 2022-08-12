@@ -95,6 +95,10 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
         {
             ::g_EnableDebugLightSpeheres = false;
         }
+        if (glfwGetKey(window, GLFW_KEY_K) == GLFW_PRESS)
+        {
+            cMesh::nextTarget(g_vec_pMeshesToDraw);
+        }
 
     }
 
@@ -103,19 +107,19 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
 void mousebutton_callback(GLFWwindow* window, int button, int action, int mods)
 {
-    switch (button)
-    {
-    case GLFW_MOUSE_BUTTON_1:
-        std::cout << "GLFW_MOUSE_BUTTON_1" << std::endl;
-        break;
-    case GLFW_MOUSE_BUTTON_2:
-        std::cout << "GLFW_MOUSE_BUTTON_2" << std::endl;
-        break;
-    case GLFW_MOUSE_BUTTON_3:
-        std::cout << "GLFW_MOUSE_BUTTON_3" << std::endl;
-        break;
-    }
-    return;
+    //switch (button)
+    //{
+    //case GLFW_MOUSE_BUTTON_1:
+    //    std::cout << "GLFW_MOUSE_BUTTON_1" << std::endl;
+    //    break;
+    //case GLFW_MOUSE_BUTTON_2:
+    //    std::cout << "GLFW_MOUSE_BUTTON_2" << std::endl;
+    //    break;
+    //case GLFW_MOUSE_BUTTON_3:
+    //    std::cout << "GLFW_MOUSE_BUTTON_3" << std::endl;
+    //    break;
+    //}
+    //return;
 }
 
 bool AreAllModifiersUp(GLFWwindow* window)
@@ -144,14 +148,14 @@ void AsyncKeyboardHandlingUpdate(GLFWwindow* window, cVAOManager& pVAOManager)
         //    std::cout << "E is pressed" << std::endl;
         //}
 
-        const float cameraMovementSpeed = 1.0f;
+        const float cameraMovementSpeed = 2.0f;
         const float cameraTurnSpeed = 0.1f; // degrees
         const float objectMovementSpeed = 0.5f;
         const float objectRotationSpeed = glm::radians(1.0f);
 
         // Nudge, nudge, wink, wink - Hey, why not change this value with some other keys...
         //  then maybe you can "select" all the objects?? Huh??? Isn't THAT neat??
-        unsigned int objectIDToMove = 2;
+        unsigned int objectIDToMove = cMesh::getTarget();
 
         if ( glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS )
         {
@@ -177,6 +181,15 @@ void AsyncKeyboardHandlingUpdate(GLFWwindow* window, cVAOManager& pVAOManager)
             {
                 ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.y += objectMovementSpeed;
             }
+            if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS)
+            {
+                ::g_vec_pMeshesToDraw[objectIDToMove]->overallScale += objectMovementSpeed;
+            }
+            if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
+            {
+                ::g_vec_pMeshesToDraw[objectIDToMove]->overallScale -= objectMovementSpeed;
+            }
+
 
             //if (key == GLFW_KEY_D) { ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.x += objectMovementSpeed; }
             //if (key == GLFW_KEY_W) { ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.z -= objectMovementSpeed; }

@@ -10,6 +10,7 @@
 #include <glm/gtc/type_ptr.hpp> // glm::value_ptr
 
 #include "cBasicTextureManager/cBasicTextureManager.h"
+#include <iostream>
 
 extern cBasicTextureManager* pTheTexureManager;
 
@@ -21,7 +22,6 @@ void SetUpTextureBindings(GLuint shaderProgramNumber, cMesh* pCurrentMesh);
 void DrawObject(cMesh* pCurrentMesh, GLuint shaderProgramNumber, cVAOManager* pVAOManager,
     glm::mat4 matModel, glm::mat4 matView, glm::mat4 matProjection)
 {
-
     // Is visible?
     if (!pCurrentMesh->bIsVisible)
     {

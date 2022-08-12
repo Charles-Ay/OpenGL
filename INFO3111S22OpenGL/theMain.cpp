@@ -136,8 +136,11 @@ int main(void)
 
     // Load some models
     cVAOManager* pVAOManager = new cVAOManager();
-
     std::string sceneLoadingErrors;
+	
+    //LoadModelDiagramAndModels("INFO3111P2_Olawale_Ayeni_1002834_103363.txt", pVAOManager, shaderProgramNumber, sceneLoadingErrors);
+
+
     if ( ! LoadAllTheModels("assets/saves/SaveFile.txt", pVAOManager, shaderProgramNumber, sceneLoadingErrors) )
     {
         std::cout << "Something went wrong: " << sceneLoadingErrors << std::endl;
@@ -221,7 +224,7 @@ int main(void)
     // Setup Platform/Renderer bindings
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init(glsl_version);
-    io.IniFilename = NULL;
+    //io.IniFilename = NULL;
     // Setup Dear ImGui style
 
     UI::InitChanges();
@@ -298,7 +301,7 @@ int main(void)
         matProjection = glm::perspective(0.6f,
                              ratio,
                              0.1f,
-                             3000.0f);
+                             10000.0f);
 
         if (::bUseFlyCamera)
         {

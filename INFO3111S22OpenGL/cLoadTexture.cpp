@@ -9,10 +9,7 @@
 
 void loadAllTextures(std::vector<cMesh*>& g_vec_pMeshesToDraw, cBasicTextureManager*& pTheTexureManager)
 {
-
-    for (int i = 0; i < g_vec_pMeshesToDraw.size(); i++) {
-		
-    }
+    int loaded = 0;
     for (cMesh* mesh : g_vec_pMeshesToDraw)
     {
         pTheTexureManager->SetBasePath(mesh->texturePath);
@@ -21,6 +18,12 @@ void loadAllTextures(std::vector<cMesh*>& g_vec_pMeshesToDraw, cBasicTextureMana
             {
                 std::cout << "Error: Didn't load " << mesh->textures[i] << std::endl;
             }
+            else {
+                std::cout << "Loading texture for: " << mesh->friendlyName << std::endl;
+                ++loaded;
+            }
         }
     }
+	
+    std::cout << loaded << " textures loaded" << std::endl;
 }

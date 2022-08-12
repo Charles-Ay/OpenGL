@@ -34,7 +34,6 @@ void UI::ShowMainWindow(bool* p_open)
 
 	if (show_app_simple_overlay)      ShowSimpleOverlay(&show_app_simple_overlay);
 	if (show_app_property_editor)     ShowPropertyEditor(&show_app_property_editor);
-    int b = 12;
 	
     // Various window flags. Typically you would just use the default!
     static bool no_titlebar = false;
@@ -198,6 +197,9 @@ void UI::ShowSimpleOverlay(bool* p_open)
         }
         else
             ImGui::Text("Camera Position: (%.1f, %.1f, %.1f)", g_cameraEye.x, g_cameraEye.y, g_cameraEye.z);
+
+        ImGui::Separator();
+        ImGui::Text("Current model ID and name: (%i, %s)", cMesh::getTarget(), cMesh::getFriendlyByID(cMesh::getTarget(), g_vec_pMeshesToDraw).c_str());
         if (ImGui::BeginPopupContextWindow())
         {
             if (ImGui::MenuItem("Custom", NULL, corner == -1)) corner = -1;
@@ -208,6 +210,8 @@ void UI::ShowSimpleOverlay(bool* p_open)
             if (p_open && ImGui::MenuItem("Close")) *p_open = false;
             ImGui::EndPopup();
         }
+        ImGui::Separator();
+		
     }
     ImGui::End();
 }
@@ -248,16 +252,44 @@ void UI::ShowPropertyEditor(bool* p_open)
                     ImGui::PushID(ss.str().c_str());
                     ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(0, 0));
                     ImGui::Columns(2);
-                    ImGui::Separator();
                     ImGui::Text("ID");
                     ImGui::NextColumn();
                     ImGui::Text(std::to_string(i).c_str());
                     ImGui::NextColumn();
-                    ImGui::Separator();
                     ImGui::PopStyleVar();
                     ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(2, 2));
                     ImGui::Columns(2);
                     ImGui::Separator();
+
+                    ImGui::Text("Model");
+                    ImGui::NextColumn();
+                    ImGui::PushItemWidth(-1);
+                    ImGui::Text(g_vec_pMeshesToDraw[i]->meshFileName.c_str());
+                    ImGui::PopItemWidth();
+                    ImGui::NextColumn();
+                    ImGui::Separator();
+
+                    ImGui::Text("Texture(s)");
+                    ImGui::NextColumn();
+                    for (int j = 0; j < g_vec_pMeshesToDraw[i]->usedTextures; ++j) {
+
+                        ImGui::PushItemWidth(-1);
+                        ImGui::Text(g_vec_pMeshesToDraw[i]->textures[j].c_str());
+                        ImGui::PopItemWidth();
+                        //if(i== g_vec_pMeshesToDraw[i]->usedTextures-1)ImGui::Separator();
+                    }
+                    ImGui::NextColumn();
+                    ImGui::Separator();
+
+                    if (g_vec_pMeshesToDraw[i]->friendlyName != "") {
+						ImGui::Text("Friendly Name");
+						ImGui::NextColumn();
+						ImGui::PushItemWidth(-1);
+						ImGui::Text(g_vec_pMeshesToDraw[i]->friendlyName.c_str());
+						ImGui::PopItemWidth();
+						ImGui::NextColumn();
+						ImGui::Separator();
+                    }
 					
                     ImGui::Text("Position");
                     ImGui::NextColumn();
@@ -316,33 +348,38 @@ void UI::ShowPropertyEditor(bool* p_open)
                     if (changes_m[i].transChange) changes_m[i].transparancy = *pTp;
                     else changes_m[i].transparancy = g_vec_pMeshesToDraw[i]->RGBA.a;
                     ImGui::PopItemWidth();
-                    ImGui::NextColumn();
-                    ImGui::Separator();
 					
-                    ImGui::Text("Model");
-                    ImGui::NextColumn();
-                    ImGui::PushItemWidth(-1);
-                    ImGui::Text(g_vec_pMeshesToDraw[i]->meshFileName.c_str());
-                    ImGui::PopItemWidth();
-                    ImGui::NextColumn();
-                    ImGui::Separator();
-					
-                    ImGui::Text("Texture(s)");
-                    ImGui::NextColumn();
-                    for (int j = 0; j < g_vec_pMeshesToDraw[i]->usedTextures; ++j) {
 
-                        ImGui::PushItemWidth(-1);
-                        ImGui::Text(g_vec_pMeshesToDraw[i]->textures[j].c_str());
-                        ImGui::PopItemWidth();
-						if(i!= g_vec_pMeshesToDraw[i]->usedTextures-1)ImGui::Separator();
-                    }
 					
                     ImGui::PopStyleVar();
                     ImGui::NextColumn();
                     ImGui::Separator();
+                    ImGui::Separator();
                     ImGui::PopID();
                 }
+                ImGui::Text("Next Model");
+                ImGui::NextColumn();
+                ImGui::Text(std::string("Model ID: " + std::to_string(cMesh::getTarget())).c_str());
+                ImGui::PushItemWidth(-1);
+                if (ImGui::Button("Select next model", ImVec2(120, 0))) {
+                    cMesh::nextTarget(g_vec_pMeshesToDraw);
+                }
+                ImGui::PopItemWidth();
+                ImGui::NextColumn();
+				ImGui::Separator();
+				
+                ImGui::Text("Prev Model");
+                ImGui::NextColumn();
+                ImGui::Text(std::string("Model ID: " + std::to_string(cMesh::getTarget())).c_str());
+                ImGui::PushItemWidth(-1);
+                if (ImGui::Button("Select previous model", ImVec2(120, 0))) {
+                    cMesh::previousTarget(g_vec_pMeshesToDraw);
+                }
+                ImGui::PopItemWidth();
+                ImGui::NextColumn();
 
+
+				
                 ImGui::TreePop();
             }
             //Lights
@@ -395,11 +432,9 @@ void UI::ShowPropertyEditor(bool* p_open)
                     ImGui::Text("Next target");
                     ImGui::NextColumn();
                     ImGui::PushItemWidth(-1);
-                    bool pressed = false;
                     if (ImGui::Button("go to next target", ImVec2(120, 0))) {
                         pTheLightManager->theLights[i].ChangeTargetToLookAt();
                     }
-                    if (pressed)pTheLightManager->theLights[i].ChangeTargetToLookAt();
                     ImGui::PopItemWidth();
                     ImGui::NextColumn();
                     ImGui::Separator();
@@ -458,7 +493,7 @@ void UI::ShowPropertyEditor(bool* p_open)
                     ImGui::PushItemWidth(-1);
                     float fl3A[3] = { pTheLightManager->theLights[i].atten.x, pTheLightManager->theLights[i].atten.y, pTheLightManager->theLights[i].atten.z };
 					ptr = fl3A;
-                    changes_l[i].attenChange = ImGui::DragFloat3("attenuation", ptr, 0.00002f, 0, 0, "%.5f");
+                    changes_l[i].attenChange = ImGui::DragFloat3("attenuation", ptr, 0.0000002f, 0, 0, "%.8f");
 					if (changes_l[i].attenChange)changes_l[i].atten = glm::vec4(ptr[0], ptr[1], ptr[2], 1.0f);
                     else changes_l[i].atten = pTheLightManager->theLights[i].atten;
                     ImGui::PopItemWidth();

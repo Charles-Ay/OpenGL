@@ -26,7 +26,7 @@ public:
 			if (light.position != pos) {
 				return true;
 			}
-			if (light.param2.x != on) {
+			if (light.param2.x != static_cast<float>(on)) {
 				return true;
 			}
 			if(light.diffuse != dif) {
@@ -45,7 +45,7 @@ public:
 			if (light.position != pos) {
 				return false;
 			}
-			if (light.param2.x != on) {
+			if (light.param2.x != static_cast<float>(on)) {
 				return false;
 			}
 			if (light.diffuse != dif) {

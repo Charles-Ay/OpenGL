@@ -31,7 +31,14 @@ const std::string lightFileName = "assets/saves/LightConfigSaveFile.txt";
 const std::string cameraFileName = "assets/saves/CameraSaveFile.txt";
 
 
+bool LoadModelDiagram(std::string sceneFileName, std::string error);
+
 bool LoadAllTheModels(std::string sceneFileName,
+	cVAOManager* pVAOManager,
+	unsigned int shaderProgramID,
+	std::string& error);
+
+bool LoadModelDiagramAndModels(std::string sceneFileName,
 	cVAOManager* pVAOManager,
 	unsigned int shaderProgramID,
 	std::string& error);

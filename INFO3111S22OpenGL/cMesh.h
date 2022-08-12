@@ -40,10 +40,16 @@ public:
 	std::string texturePath;
 
 	float textureRatio[MAXNUMTEXTURES];
-	int usedTextures;;
-
+	int usedTextures;
 
 	unsigned int getUniqueObjectID(void);
+
+	static int getTarget();
+
+	static void nextTarget(std::vector< cMesh* > &g_vec_pMeshesToDraw);
+	static void previousTarget(std::vector< cMesh* >& g_vec_pMeshesToDraw);
+
+	static std::string getFriendlyByID(unsigned int id, std::vector< cMesh* >& g_vec_pMeshesToDraw);
 private:
 	static unsigned int m_NextID;	// = 0;
 	unsigned int uniqueObjectID;

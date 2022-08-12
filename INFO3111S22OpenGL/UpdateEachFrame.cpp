@@ -22,8 +22,8 @@ void UpdateEachFrame(double deltaTime)
 	if (pWhale)
 	{
 		// Crazy colour is #2
-		pWhale->textureRatio[0] = (cos(someValue) + 1.0) * 0.5f;
-		pWhale->textureRatio[2] = 1.0 - pWhale->textureRatio[0];
+		pWhale->textureRatio[0] = (cos(someValue) + 1.0f) * 0.5f;
+		pWhale->textureRatio[2] = 1.0f - pWhale->textureRatio[0];
 		if (timerCounter < 0.0)
 		{
 			timerCounter = 0.0;
