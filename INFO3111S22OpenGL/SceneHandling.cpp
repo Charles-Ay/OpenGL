@@ -375,7 +375,7 @@ bool LoadModelDiagramAndModels(std::string sceneFileName,
 
 	
 	
-	while (numObjects < 9) {
+	while (numObjects < diagram.size()) {
 		std::string line = diagram[numObjects];
 		for (unsigned i = 0; i < line.size(); ++i) {
 			if (line[i] == '_') {
