@@ -103,7 +103,11 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
         {
             cMesh::previousTarget(g_vec_pMeshesToDraw);
         }
-
+        if (glfwGetKey(window, GLFW_KEY_T) == GLFW_PRESS)
+        {
+            cMesh::duplicateCurrentTarget(g_vec_pMeshesToDraw);
+            std::cout << "Duplicated current target" << std::endl;
+        }
     }
 
     return;

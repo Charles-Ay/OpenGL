@@ -150,7 +150,7 @@ int main(void)
         std::cout << "Scene loaded OK" << std::endl;
     }
 	
-    RotateFloor();
+
 	
     std::string error;
     pTheLightManager = new cLightManager();

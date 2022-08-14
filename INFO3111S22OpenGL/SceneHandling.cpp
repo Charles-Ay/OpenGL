@@ -220,7 +220,7 @@ bool SaveSceneToFile(std::string sceneFileName, std::string& error)
 	sceneFile << "EMPTY FLOOR INSTEAD OF STAIRS FOR NOW(#13 & #14)" << "\n";
 	sceneFile << "COMMENT_END" << "\n";
 	
-	for (unsigned int index = 0; index != g_vec_pMeshesToDraw.size(); index++) {
+	for (unsigned int index = 0; index < g_vec_pMeshesToDraw.size(); index++) {
 		cMesh* pCurrentMesh = g_vec_pMeshesToDraw.at(index);
 		sceneFile << pCurrentMesh->meshFileName << "\n";
 		sceneFile << pCurrentMesh->XYZLocation.x << "   " << pCurrentMesh->XYZLocation.y

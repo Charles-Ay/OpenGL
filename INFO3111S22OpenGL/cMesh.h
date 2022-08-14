@@ -48,6 +48,7 @@ public:
 
 	static void nextTarget(std::vector< cMesh* > &g_vec_pMeshesToDraw);
 	static void previousTarget(std::vector< cMesh* >& g_vec_pMeshesToDraw);
+	static void duplicateCurrentTarget(std::vector< cMesh* >& g_vec_pMeshesToDraw);
 
 	static std::string getFriendlyByID(unsigned int id, std::vector< cMesh* >& g_vec_pMeshesToDraw);
 private:

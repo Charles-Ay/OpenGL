@@ -2,7 +2,7 @@
 #include <iostream>
 
 static unsigned int m_NextID;	// = 0;
-static unsigned int target = 301;//180
+static unsigned int target = 307;//180
 static glm::vec4 prevColor;
 static unsigned int prevTarget;
 
@@ -59,75 +59,91 @@ int cMesh::getTarget()
 
 void cMesh::nextTarget(std::vector< cMesh* > &g_vec_pMeshesToDraw)
 {
-	//if (target + 1 < g_vec_pMeshesToDraw.size()) {
-	//	target++;
-	//}
-	//else {
-	//	target = 0;
-	//}
-	
-	while (static_cast<unsigned long long>(target) + 1 < g_vec_pMeshesToDraw.size())
-	{
-		//not found string
-		if (g_vec_pMeshesToDraw[target + 1]->friendlyName.find(",Stair:") == std::string::npos ) {
-			target++;
-			//if (target == 0) {
-			//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
-			//	prevTarget = target;
-			//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
-			//}
-			//else {
-			//	g_vec_pMeshesToDraw[prevTarget]->RGBA = prevColor;
-			//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
-			//	prevTarget = target;
-			//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
-			//}
-			//g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
-		}
-		else {
-			//std::cout << "target: " << target << std::endl;
-			target++;
-			break;
-		}
-
+	if (target + 1 < g_vec_pMeshesToDraw.size()) {
+		target++;
 	}
-	if (target + 1 > g_vec_pMeshesToDraw.size()) {
+	else {
 		target = 0;
 	}
-	std::cout << "target: " << target << std::endl;
+	
+	//while (static_cast<unsigned long long>(target) + 1 < g_vec_pMeshesToDraw.size())
+	//{
+	//	//not found string
+	//	if (g_vec_pMeshesToDraw[target + 1]->friendlyName.find(",Stair:") == std::string::npos ) {
+	//		target++;
+	//		//if (target == 0) {
+	//		//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
+	//		//	prevTarget = target;
+	//		//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+	//		//}
+	//		//else {
+	//		//	g_vec_pMeshesToDraw[prevTarget]->RGBA = prevColor;
+	//		//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
+	//		//	prevTarget = target;
+	//		//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+	//		//}
+	//		//g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+	//	}
+	//	else {
+	//		//std::cout << "target: " << target << std::endl;
+	//		target++;
+	//		break;
+	//	}
+
+	//}
+	//if (target + 1 > g_vec_pMeshesToDraw.size()) {
+	//	target = 0;
+	//}
+	//std::cout << "target: " << target << std::endl;
 }
 
 void cMesh::previousTarget(std::vector< cMesh* >& g_vec_pMeshesToDraw)
 {
-	while (static_cast<unsigned long long>(target) + 1 < g_vec_pMeshesToDraw.size())
-	{
-		//not found string
-		if (g_vec_pMeshesToDraw[target - 1]->friendlyName.find(",Stair:") == std::string::npos) {
-			target--;
-			//if (target == 0) {
-			//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
-			//	prevTarget = target;
-			//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
-			//}
-			//else {
-			//	g_vec_pMeshesToDraw[prevTarget]->RGBA = prevColor;
-			//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
-			//	prevTarget = target;
-			//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
-			//}
-			//g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
-		}
-		else {
-			//std::cout << "target: " << target << std::endl;
-			target--;
-			break;
-		}
+	if (target == 0) {
+		target = g_vec_pMeshesToDraw.size() - 1;
+	}
+	else {
+		target--;
+	}
+	//while (static_cast<unsigned long long>(target) + 1 < g_vec_pMeshesToDraw.size())
+	//{
+	//	//not found string
+	//	if (g_vec_pMeshesToDraw[target - 1]->friendlyName.find(",Stair:") == std::string::npos) {
+	//		target--;
+	//		//if (target == 0) {
+	//		//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
+	//		//	prevTarget = target;
+	//		//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+	//		//}
+	//		//else {
+	//		//	g_vec_pMeshesToDraw[prevTarget]->RGBA = prevColor;
+	//		//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
+	//		//	prevTarget = target;
+	//		//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+	//		//}
+	//		//g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+	//	}
+	//	else {
+	//		//std::cout << "target: " << target << std::endl;
+	//		target--;
+	//		break;
+	//	}
 
-	}
-	if (target - 1 < 0) {
-		target = g_vec_pMeshesToDraw.size() -1;
-	}
-	std::cout << "target: " << target << std::endl;
+	//}
+	//if (target - 1 < 0) {
+	//	target = g_vec_pMeshesToDraw.size() -1;
+	//}
+	//std::cout << "target: " << target << std::endl;
+}
+
+void cMesh::duplicateCurrentTarget(std::vector<cMesh*>& g_vec_pMeshesToDraw)
+{
+	cMesh* pMesh = new cMesh();
+	*pMesh = *g_vec_pMeshesToDraw[target];
+	pMesh->friendlyName = pMesh->friendlyName + "_DUPLICATE";
+	pMesh->overallScale = g_vec_pMeshesToDraw[target]->overallScale;
+	g_vec_pMeshesToDraw.push_back(pMesh);
+	target = g_vec_pMeshesToDraw.size() - 1;
 }
 
 std::string cMesh::getFriendlyByID(unsigned int id, std::vector< cMesh* >& g_vec_pMeshesToDraw)
