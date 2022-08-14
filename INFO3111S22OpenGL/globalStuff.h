@@ -32,6 +32,8 @@ const std::string cameraFileName = "assets/saves/CameraSaveFile.txt";
 
 
 bool LoadModelDiagram(std::string sceneFileName, std::string error);
+void RotateFloor();
+
 
 bool LoadAllTheModels(std::string sceneFileName,
 	cVAOManager* pVAOManager,

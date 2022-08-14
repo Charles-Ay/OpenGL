@@ -99,6 +99,10 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
         {
             cMesh::nextTarget(g_vec_pMeshesToDraw);
         }
+        if (glfwGetKey(window, GLFW_KEY_U) == GLFW_PRESS)
+        {
+            cMesh::previousTarget(g_vec_pMeshesToDraw);
+        }
 
     }
 
@@ -148,9 +152,9 @@ void AsyncKeyboardHandlingUpdate(GLFWwindow* window, cVAOManager& pVAOManager)
         //    std::cout << "E is pressed" << std::endl;
         //}
 
-        const float cameraMovementSpeed = 2.0f;
+        const float cameraMovementSpeed = 4.0f;
         const float cameraTurnSpeed = 0.1f; // degrees
-        const float objectMovementSpeed = 0.5f;
+        const float objectMovementSpeed = 2.f;
         const float objectRotationSpeed = glm::radians(1.0f);
 
         // Nudge, nudge, wink, wink - Hey, why not change this value with some other keys...
@@ -181,10 +185,10 @@ void AsyncKeyboardHandlingUpdate(GLFWwindow* window, cVAOManager& pVAOManager)
             {
                 ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.y += objectMovementSpeed;
             }
-            if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS)
-            {
-                ::g_vec_pMeshesToDraw[objectIDToMove]->overallScale += objectMovementSpeed;
-            }
+            //if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS)
+            //{
+            //    ::g_vec_pMeshesToDraw[objectIDToMove]->overallScale += objectMovementSpeed;
+            //}
             if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
             {
                 ::g_vec_pMeshesToDraw[objectIDToMove]->overallScale -= objectMovementSpeed;

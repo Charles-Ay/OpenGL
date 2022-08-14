@@ -1,8 +1,10 @@
-3
+5
+assets/models/Dungeon_models/Extra/SM_Bld_Dwarf_Building_Door_02_B.ply
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Archway_01.ply
-38
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
+287
 COMMENT_START
 XYZLocation.x   XYZLocation.y   XYZLocation.z
 RGBA.x   RGBA.y   RGBA.z   RGBA.a
@@ -14,11 +16,11 @@ ARCH INSTEAD OF DOOR FOR NOW
 EMPTY FLOOR INSTEAD OF STAIRS FOR NOW(#13 & #14)
 COMMENT_END
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
--74   10   -338
+-74   10   -339
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo1floor
+has_friendly   Level:1,Floor:1,ID=0
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
@@ -29,29 +31,29 @@ assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo1wall
+has_friendly   Level:1,Wall:1
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
-101   10   -338
+101   10   -337.5
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo2floor
+has_friendly   Level:1,Floor:2,ID=2
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
--75   3.5   -509
+-74   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo2wall
+has_friendly   Level:1,Wall:2
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
@@ -62,84 +64,84 @@ assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo3floor
+has_friendly   Level:1,Floor:3,ID=4
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-100   3.5   -509
+101   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo3wall
+has_friendly   Level:1,Wall:3
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
-451   10   -338
+451   10   -335.5
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo4floor
+has_friendly   Level:1,Floor:4,ID=6
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-275   3.5   -509
+276   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo4wall
+has_friendly   Level:1,Wall:4
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
-626   10   -338
+626   10   -337
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo5floor
+has_friendly   Level:1,Floor:5,ID=8
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-450   3.5   -509
+451   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo5wall
+has_friendly   Level:1,Wall:5
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
-801   10   -338
+801   10   -337
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo6floor
+has_friendly   Level:1,Floor:6,ID=10
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-625   3.5   -509
+626   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo6wall
+has_friendly   Level:1,Wall:6
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
@@ -150,40 +152,40 @@ assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo7floor
+has_friendly   Level:1,Floor:7,ID=12
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-800   3.5   -509
+801   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo7wall
+has_friendly   Level:1,Wall:7
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
-1151   10   -338
+1151   10   -337.5
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo8floor
+has_friendly   Level:1,Floor:8,ID=14
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-975   3.5   -509
+976   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo8wall
+has_friendly   Level:1,Wall:8
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
@@ -194,18 +196,18 @@ assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo9floor
+has_friendly   Level:1,DoorFloor:9
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
-assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Archway_01.ply
-1150   3.5   -509
+assets/models/Dungeon_models/Extra/SM_Bld_Dwarf_Building_Door_02_B.ply
+1329.5   3.5   -504
 1   1   1   1
 0   3.15   0
-0.35
-has_friendly   level1combo9door
+1
+has_friendly   Level:1,Door:9
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
@@ -216,18 +218,18 @@ assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo10floor
+has_friendly   Level:1,Floor:10,ID=18
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-1325   3.5   -509
+1326   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo10wall
+has_friendly   Level:1,Wall:10
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
@@ -238,128 +240,106 @@ assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo11floor
+has_friendly   Level:1,Floor:11,ID=20
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-1500   3.5   -509
+1501   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo11wall
+has_friendly   Level:1,Wall:11
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
-1851   10   -338
+1851   10   -339
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo12floor
+has_friendly   Level:1,Floor:12,ID=22
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-1675   3.5   -509
+1676   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo12wall
+has_friendly   Level:1,Wall:12
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-1850   3.5   -509
+1851   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo13wall
+has_friendly   Level:1,StairWall:13
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+2201   3.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:1,Stair:13
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-2025   3.5   -509
+2026   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo14wall
+has_friendly   Level:1,StairWall:14
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+2551   3.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:1,Stair:14
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
 texture_end
 1   
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
-2376   10   -338
+2726   10   -338.5
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo15floor
+has_friendly   Level:1,Floor:15,ID=28
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-2200   3.5   -509
+2201   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo15wall
-has_texture
-assets/textures/Dungeons
-Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
-texture_end
-1   
-assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
-2551   10   -338
-1   1   1   1
-0   0   0
-0.35
-has_friendly   level1combo16floor
-has_texture
-assets/textures/Dungeons
-Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
-texture_end
-1   
-assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-2375   3.5   -509
-1   1   1   1
-0   3.15   0
-0.35
-has_friendly   level1combo16wall
-has_texture
-assets/textures/Dungeons
-Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
-texture_end
-1   
-assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
-2726   10   -338
-1   1   1   1
-0   0   0
-0.35
-has_friendly   level1combo17floor
-has_texture
-assets/textures/Dungeons
-Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
-texture_end
-1   
-assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-2550   3.5   -509
-1   1   1   1
-0   3.15   0
-0.35
-has_friendly   level1combo17wall
+has_friendly   Level:1,Wall:15
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
@@ -370,18 +350,18 @@ assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo18floor
+has_friendly   Level:1,Floor:16,ID=30
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-2725   3.5   -509
+2376   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo18wall
+has_friendly   Level:1,Wall:16
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
@@ -392,40 +372,2801 @@ assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo19floor
+has_friendly   Level:1,Floor:17,ID=32
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-2900   3.5   -509
+2551   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo19wall
+has_friendly   Level:1,Wall:17
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
-3251   10   -338
+3251   10   -336.5
 1   1   1   1
 0   0   0
 0.35
-has_friendly   level1combo20floor
+has_friendly   Level:1,Floor:18,ID=34
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
-3075   3.5   -509
+2726   3.5   -509
 1   1   1   1
 0   3.15   0
 0.35
-has_friendly   level1combo20wall
+has_friendly   Level:1,Wall:18
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2377   10   -340.5
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:1,Floor:19,ID=36
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2901   3.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:1,Wall:19
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2552   10   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:1,Floor:20,ID=38
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+3076   3.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:1,Wall:20
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-249   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:1,ID=40
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
+-74   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:2
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+101   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:3,ID=42
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+276   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:4,ID=43
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+451   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:5,ID=44
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+626   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:6,ID=45
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+801   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:7,ID=46
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+976   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:8,ID=47
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
+1151   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:9
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
+1326   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:10
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
+1501   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:11
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1676   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:12,ID=51
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1851   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:13,ID=52
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2026   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:14,ID=53
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2201   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,StairWall:15
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+3951   178.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:2,Stair:15
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2376   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,StairWall:16
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+4301   178.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:2,Stair:16
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2551   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:17,ID=58
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2726   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:18,ID=59
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2901   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:19,ID=60
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+3076   178.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:2,Wall:20,ID=61
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-249   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:1,ID=62
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-74   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:2,ID=63
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+101   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:3,ID=64
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+276   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:4,ID=65
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+451   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:5,ID=66
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+626   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:6,ID=67
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+801   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:7,ID=68
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+976   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:8,ID=69
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1151   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:9,ID=70
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1326   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:10,ID=71
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1501   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:11,ID=72
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1676   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:12,ID=73
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1851   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:13,ID=74
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2026   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:14,ID=75
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2201   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:15,ID=76
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2376   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:16,ID=77
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2551   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,StairWall:17
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+4651   353.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:3,Stair:17
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2726   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,StairWall:18
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+5001   353.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:3,Stair:18
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2901   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:19,ID=82
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+3076   353.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:3,Wall:20,ID=83
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+-74   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:1,ID=84
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+625.5   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:1_A,ID=84_A
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+450.5   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:1_B,ID=84_B
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-249   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:1
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-74   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,StairWall:2
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+276   528.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:4,Stair:2
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+101   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,StairWall:3
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+626   528.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:4,Stair:3
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+801   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:4,ID=90
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+276   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:4
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+976   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:5,ID=92
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+451   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:5
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+1151   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:6,ID=94
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+626   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:6
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+1326   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:7,ID=96
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+801   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:7
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+1501   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:8,ID=98
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+976   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:8
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1151   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:9,ID=100
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+1676   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,DoorFloor:10
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Bld_Dwarf_Building_Door_02_B.ply
+1504.5   528.5   -504
+1   1   1   1
+0   3.15   0
+1
+has_friendly   Level:4,Door:10
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1501   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:11,ID=103
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+1851   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:12,ID=104
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1676   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:12
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2026   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:13,ID=106
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1851   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:13
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2201   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:14,ID=108
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2026   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:14
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2376   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:15,ID=110
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2201   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:15
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2551   535   -333.5
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:16,ID=112
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2376   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:16
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2551   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:17,ID=114
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2726   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:18,ID=115
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+3252   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:19,ID=116
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2901   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:19
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+3077   535   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:4,Floor:20,ID=118
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+3076   528.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:4,Wall:20
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-249   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:1,ID=120
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
+-74   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:2
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+101   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:3,ID=122
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+276   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,StairWall:4
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+3251   703.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:5,Stair:4
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+451   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,StairWall:5
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+3601   703.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:5,Stair:5
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+626   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:6,ID=127
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+801   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:7,ID=128
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+976   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:8,ID=129
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1151   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:9,ID=130
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
+1326   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:10
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
+1501   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:11
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1676   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:12,ID=133
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1851   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:13,ID=134
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2026   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:14,ID=135
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2201   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:15,ID=136
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
+2376   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:16
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2551   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:17,ID=138
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2726   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:18,ID=139
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2901   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:19,ID=140
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+3076   703.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:5,Wall:20,ID=141
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-249   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:1,ID=142
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-74   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:2,ID=143
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+101   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:3,ID=144
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+276   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:4,ID=145
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+451   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:5,ID=146
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+626   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,StairWall:6
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+3951   878.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:6,Stair:6
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+801   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,StairWall:7
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+4301   878.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:6,Stair:7
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+976   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:8,ID=151
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1151   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:9,ID=152
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1326   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:10,ID=153
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1501   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:11,ID=154
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1676   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:12,ID=155
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1851   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:13,ID=156
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2026   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:14,ID=157
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2201   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:15,ID=158
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2376   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:16,ID=159
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2551   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:17,ID=160
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2726   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:18,ID=161
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2901   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:19,ID=162
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+3076   878.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:6,Wall:20,ID=163
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+-74   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:1,ID=164
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-249   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:1
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+101   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,DoorFloor:2
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Bld_Dwarf_Building_Door_02_B.ply
+104.5   1053.5   -504
+1   1   1   1
+0   3.15   0
+1
+has_friendly   Level:7,Door:2
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+276   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:3,ID=168
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+101   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:3
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+276   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,StairWall:4
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+626   1053.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:7,Stair:4
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+451   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,StairWall:5
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+976   1053.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:7,Stair:5
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+626   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:6,ID=174
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+801   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:7,ID=175
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+801.5   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:8,ID=176
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+976   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:8_A,ID=176_A
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+1151   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:8_B,ID=176_B
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+976   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:8
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+1326   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:9,ID=178
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1151   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:9
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1326   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:10,ID=180
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+1501   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:11,ID=181
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1501   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:11
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+1676   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:12,ID=183
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1676   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:12
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+1851   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:13,ID=185
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1851   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:13
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2026   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:14,ID=187
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2026   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:14
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2201   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:15,ID=189
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2201   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:15
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2376   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:16,ID=191
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2376   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:16
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2551   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:17,ID=193
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2551   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:17
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2727.5   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:18,ID=195
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2726   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:18
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2901   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:19,ID=197
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2901   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:19
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+3247.5   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:20,ID=199
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+3076   1060   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:7,Floor:20_A,ID=199_A
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+3076   1053.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:7,Wall:20
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-249   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:1,ID=201
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
+-74   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:2
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+101   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:3,ID=203
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+276   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:4,ID=204
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
+451   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:5
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+626   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,StairWall:6
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+3426   1228.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:8,Stair:6
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+801   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,StairWall:7
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+3776   1228.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:8,Stair:7
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+976   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:8,ID=210
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
+1151   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:9
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
+1326   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:10
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1501   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:11,ID=213
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1676   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:12,ID=214
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1851   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:13,ID=215
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2026   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:14,ID=216
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2201   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:15,ID=217
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2376   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:16,ID=218
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2551   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:17,ID=219
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2726   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:18,ID=220
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2901   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:19,ID=221
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+3076   1228.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:8,Wall:20,ID=222
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-249   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:1,ID=223
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-74   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:2,ID=224
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+101   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:3,ID=225
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+276   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:4,ID=226
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+451   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:5,ID=227
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+626   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:6,ID=228
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+801   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:7,ID=229
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+976   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,StairWall:8
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+4126   1403.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:9,Stair:8
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1151   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,StairWall:9
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
+4476   1403.5   -509
+1   1   1   1
+0   4.71239   0
+0.35
+has_friendly   Level:9,Stair:9
+has_texture
+assets/textures/Dungeons
+SM_Env_Dwarf_Narrow_Stairs_01.ply   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1326   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:10,ID=234
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1501   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:11,ID=235
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1676   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:12,ID=236
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1851   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:13,ID=237
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2026   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:14,ID=238
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2201   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:15,ID=239
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2376   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:16,ID=240
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2551   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:17,ID=241
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2726   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:18,ID=242
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2901   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:19,ID=243
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+3076   1403.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:9,Wall:20,ID=244
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+-74   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:1,ID=245
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-249   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:1
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+-74   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:2,ID=247
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2900.5   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:3,ID=248
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+101   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:3
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+276   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:4,ID=250
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+276   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:4
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+451   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:5,ID=252
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+451   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:5
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+626   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:6,ID=254
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+626   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:6
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+801   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,DoorFloor:7
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Bld_Dwarf_Building_Door_02_B.ply
+979.5   1578.5   -504
+1   1   1   1
+0   3.15   0
+1
+has_friendly   Level:10,Door:7
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+976   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:8,ID=258
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1151   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:9,ID=259
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+976   1585   -338.5
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:10,ID=260
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1326   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:10
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+3076.5   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:11,ID=262
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1501   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:11
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+3251.5   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:12,ID=264
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1676   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:12
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+1501   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:13,ID=266
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+1851   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:13
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+1676   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:14,ID=268
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2026   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:14
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+1851   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:15,ID=270
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2201   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:15
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2026   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:16,ID=272
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2376   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:16
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2201   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,DoorFloor:17
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Extra/SM_Bld_Dwarf_Building_Door_02_B.ply
+2729.5   1578.5   -504
+1   1   1   1
+0   3.15   0
+1
+has_friendly   Level:10,Door:17
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2376   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:18,ID=276
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2726   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:18
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2551   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:19,ID=278
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+2901   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:19
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
+2726   1585   -338
+1   1   1   1
+0   0   0
+0.35
+has_friendly   Level:10,Floor:20,ID=280
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
+3076   1578.5   -509
+1   1   1   1
+0   3.15   0
+0.35
+has_friendly   Level:10,Wall:20
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
