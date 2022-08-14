@@ -94,8 +94,9 @@ bool LoadAllTheModels(std::string sceneFileName,
 		while (numberOfModelsLoaded < numberOfModelsToLoad)
 		{
 			cMesh* mesh = new cMesh();
-
-			sceneFile >> tmp;
+			
+			if (tmp == "")sceneFile >> tmp;
+			
 			if (tmp == "COMMENT_START") {
 				while (tmp != "COMMENT_END") {
 					sceneFile >> tmp;

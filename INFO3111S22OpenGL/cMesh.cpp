@@ -2,7 +2,7 @@
 #include <iostream>
 
 static unsigned int m_NextID;	// = 0;
-static unsigned int target = 80;//180
+static unsigned int target = 120;
 static glm::vec4 prevColor;
 static unsigned int prevTarget;
 
@@ -65,7 +65,7 @@ void cMesh::nextTarget(std::vector< cMesh* > &g_vec_pMeshesToDraw)
 	//else {
 	//	target = 0;
 	//}
-	//
+	
 	while (static_cast<unsigned long long>(target) + 1 < g_vec_pMeshesToDraw.size())
 	{
 		//not found string
@@ -91,10 +91,10 @@ void cMesh::nextTarget(std::vector< cMesh* > &g_vec_pMeshesToDraw)
 		}
 
 	}
-	if (target + 1 > g_vec_pMeshesToDraw.size()) {
-		target = 0;
-	}
-	std::cout << "target: " << target << std::endl;
+	//if (target + 1 > g_vec_pMeshesToDraw.size()) {
+	//	target = 0;
+	//}
+	//std::cout << "target: " << target << std::endl;
 }
 
 void cMesh::previousTarget(std::vector< cMesh* >& g_vec_pMeshesToDraw)

@@ -185,7 +185,9 @@ void AsyncKeyboardHandlingUpdate(GLFWwindow* window, cVAOManager& pVAOManager)
             // Move the object
     //        if (key == GLFW_KEY_A) { ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.x -= objectMovementSpeed; }
             if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) 
-            { ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.x -= objectMovementSpeed; }
+            { 
+                ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.x -= objectMovementSpeed; 
+            }
             if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) 
             { ::g_vec_pMeshesToDraw[objectIDToMove]->XYZLocation.x += objectMovementSpeed; }
             if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)

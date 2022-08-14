@@ -1,14 +1,20 @@
-9
+15
 assets/models/Dungeon_models/Extra/SM_Bld_Dwarf_Building_Door_02_B.ply
 assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_19.ply
+assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
+assets/models/Dungeon_models/Plants/SM_Env_GroundLeaves_02.ply
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_01.ply
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_02.ply
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_03.ply
+assets/models/Dungeon_models/Plants/SM_Env_Tree_Vines_04.ply
 assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_01.ply
 assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_02.ply
 assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_04.ply
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
-316
+327
 COMMENT_START
 XYZLocation.x   XYZLocation.y   XYZLocation.z
 RGBA.x   RGBA.y   RGBA.z   RGBA.a
@@ -208,7 +214,7 @@ texture_end
 1   
 assets/models/Dungeon_models/Extra/SM_Bld_Dwarf_Building_Door_02_B.ply
 1329.5   3.5   -504
-1   1   1   1
+1   0   0   1
 0   3.15   0
 1
 has_friendly   Level:1,Door:9
@@ -1184,7 +1190,7 @@ has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
-1
+1   
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
 801   528.5   -509
 1   1   1   1
@@ -1228,7 +1234,7 @@ has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
-1 
+1   
 assets/models/Dungeon_models/Extra/SM_Bld_Dwarf_Building_Door_02_B.ply
 1504.5   528.5   -504
 1   1   1   1
@@ -2181,17 +2187,6 @@ assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
 0   3.15   0
 0.35
 has_friendly   Level:7,Wall:10,ID=180
-has_texture
-assets/textures/Dungeons
-Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
-texture_end
-1   
-assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
-1501   1060   -338
-1   1   1   1
-0   0   0
-0.35
-has_friendly   Level:7,Floor:11,ID=181
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
@@ -3495,3 +3490,75 @@ assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
 texture_end
 1   
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_01.ply
+1597   18.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+30
+has_friendly   Palm1
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_02.ply
+1597   18.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+30
+has_friendly   Palm2
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_03.ply
+1597   18.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+30
+has_friendly   Palm3
+assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
+1597   18.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+65
+has_friendly   Grass
+assets/models/Dungeon_models/Plants/SM_Env_GroundLeaves_02.ply
+1533   18.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+80
+has_friendly   Leaves
+assets/models/Dungeon_models/Plants/SM_Env_Tree_Vines_04.ply
+1503   368.5   -492
+0.227   0.372   0.43   1
+0   3.15   0
+50
+has_friendly   Vine
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_01.ply
+1221   18.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+30
+has_friendly   Palm1_B
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_02.ply
+1221   18.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+30
+has_friendly   Palm2_B
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_03.ply
+1221   18.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+30
+has_friendly   Palm3_B
+assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
+1221   18.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+65
+has_friendly   Grass_B
+assets/models/Dungeon_models/Plants/SM_Env_GroundLeaves_02.ply
+1496   18.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+80
+has_friendly   Leaves_B
+assets/models/Dungeon_models/Plants/SM_Env_Tree_Vines_04.ply
+1163   368.5   -492
+0.227   0.372   0.43   1
+0   3.15   0
+50
+has_friendly   Vine_B

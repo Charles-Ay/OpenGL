@@ -237,6 +237,50 @@ void DrawObject(cMesh* pCurrentMesh, GLuint shaderProgramNumber, cVAOManager* pV
         glUniform1f(bUseHeightMap_UL, (GLfloat)GL_FALSE);
     }
 
+	
+
+
+
+    // HACK: Apply colour to palm trees
+    if (pCurrentMesh->friendlyName.find("Palm") != std::string::npos)
+    {
+        //        uniform bool bUseHeightMap;
+        //        uniform sampler2D heightMapTexture;
+
+        GLint bUseModelFileColours_UL = glGetUniformLocation(shaderProgramNumber, "bUseModelFileColours");
+        glUniform1f(bUseModelFileColours_UL, (GLfloat)GL_TRUE);
+
+    }
+    else
+    {
+        GLint bUseModelFileColours_UL = glGetUniformLocation(shaderProgramNumber, "bUseModelFileColours");
+        glUniform1f(bUseModelFileColours_UL, (GLfloat)GL_FALSE);
+    }
+
+
+    // HACK: Apply colour to palm trees
+    if (pCurrentMesh->friendlyName.find("Palm") != std::string::npos)
+    {
+        //        uniform bool bUseHeightMap;
+        //        uniform sampler2D heightMapTexture;
+
+        GLint bDontUseTextureColour_UL = glGetUniformLocation(shaderProgramNumber, "bDontUseTextureColour");
+        glUniform1f(bDontUseTextureColour_UL, (GLfloat)GL_TRUE);
+
+    }
+    else
+    {
+        GLint bDontUseTextureColour_UL = glGetUniformLocation(shaderProgramNumber, "bDontUseTextureColour");
+        glUniform1f(bDontUseTextureColour_UL, (GLfloat)GL_FALSE);
+    }
+
+
+
+
+
+
+
+	
     // GL_LINE_LOOP, GL_POINTS, or GL_TRIANGLES
     //        glDrawArrays(GL_TRIANGLES, 0, numberOfCowVerticesToDraw);
     //        glDrawArrays(GL_TRIANGLES, 0, 3);
