@@ -1,12 +1,14 @@
-7
+9
 assets/models/Dungeon_models/Extra/SM_Bld_Dwarf_Building_Door_02_B.ply
 assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_19.ply
+assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_01.ply
 assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_02.ply
+assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_04.ply
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
-310
+318
 COMMENT_START
 XYZLocation.x   XYZLocation.y   XYZLocation.z
 RGBA.x   RGBA.y   RGBA.z   RGBA.a
@@ -3422,6 +3424,94 @@ assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_02.ply
 0   3.15   0
 1.5
 has_friendly   Torch1_DUPLICATE_DUPLICATE_DUPLICATE
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_01.ply
+2987   782.5   -498
+1   1   1   1
+0   3.15   0
+1.5
+has_friendly   Torch2
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_01.ply
+2121   782.5   -498
+1   1   1   1
+0   3.15   0
+1.5
+has_friendly   Torch2_DUPLICATE
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_01.ply
+1243   782.5   -498
+1   1   1   1
+0   3.15   0
+1.5
+has_friendly   Torch2_DUPLICATE_DUPLICATE
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_01.ply
+591   782.5   -488
+1   1   1   1
+0   3.15   0
+1.5
+has_friendly   Torch2_DUPLICATE_DUPLICATE_DUPLICATE
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_04.ply
+189   1274.5   -488
+1   1   1   1
+0   3.15   0
+1.5
+has_friendly   Torch3
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_04.ply
+1069   1274.5   -488
+1   1   1   1
+0   3.15   0
+1.5
+has_friendly   Torch3_DUPLICATE
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_04.ply
+1771   1274.5   -488
+1   1   1   1
+0   3.15   0
+1.5
+has_friendly   Torch3_DUPLICATE_DUPLICATE
+has_texture
+assets/textures/Dungeons
+Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+texture_end
+1   
+assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_04.ply
+2811   1274.5   -488
+1   1   1   1
+0   3.15   0
+1.5
+has_friendly   Torch3_DUPLICATE_DUPLICATE_DUPLICATE
 has_texture
 assets/textures/Dungeons
 Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   

@@ -63,7 +63,7 @@ cBasicTextureManager* pTheTexureManager = NULL;
 
 bool g_EnableDebugLightSpeheres = true;
 
-unsigned int currentLight = 0;
+unsigned int currentLight = 9;
 
 glm::vec3 g_cameraEye = LoadCameraFromFile("assets/saves/CameraSaveFile.txt");
 cFlyCamera* g_pFlyCamera = NULL;
@@ -353,6 +353,7 @@ int main(void)
 //        pTheLightManager->theLights[0].position = glm::vec4(pMeshSphere->XYZLocation, 1.0f);
 		
         // Copy the lighting information to the shader
+        pTheLightManager->RandomizeLightAttens();
         CopyLightInformationToShader(pTheLightManager, shaderProgramNumber);
 
 

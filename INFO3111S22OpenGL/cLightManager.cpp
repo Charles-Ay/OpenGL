@@ -8,6 +8,7 @@
 std::string cLightManager::LIGHT_OBJECT_NAME;
 int cLightManager::numberOfUsedLights = 0;
 extern std::vector< cMesh* > g_vec_pMeshesToDraw;
+extern unsigned int currentLight;
 
 bool cLightManager::SaveLightConfigToFile(cLightManager& lightManager, std::string fileName, std::string& error)
 {
@@ -110,13 +111,101 @@ bool cLightManager::LoadLightConfigFromFile(cLightManager &lightManager, cVAOMan
 	return true;
 }
 
+void cLightManager::NextLight()
+{
+	if(currentLight < numberOfUsedLights - 1)
+		++currentLight;
+	else
+		currentLight = 0;
+}
+
+void cLightManager::PreviousLight()
+{
+	if (currentLight == 0) {
+		currentLight = numberOfUsedLights - 1;
+	}
+	else --currentLight;
+}
+
+void cLightManager::RandomizeLightAttens()
+{
+	//for (sLightDescription light : theLights) {
+	//	if (light.diffuse.x < 1.0f && light.diffuse.y < 1.0f) {
+	//		int plusMinus = rand() % 2;
+	//		float randFloat = rand() % 2 + 1;// 0 - 2
+	//		randFloat /= 100;
+	//		if (plusMinus == 0) {
+	//			light.atten.x = light.atten.x - randFloat;
+	//		}
+	//		else {
+	//			light.atten.x = light.atten.x + randFloat;
+	//		}
+	//			
+	//	}
+	//}
+
+	for (int i = 0; i < numberOfUsedLights; ++i) {
+		sLightDescription li = theLights[i];
+		if (li.diffuse.x < 1.0f && li.diffuse.y < 1.0f) {
+			int plusMinus = rand() % 2;
+			float randFloat = rand() % 2 + 1;// 0 - 2
+			randFloat /= 5;
+			if (plusMinus == 0) {
+				if(li.atten.x > 0.0f)
+					li.atten.x = li.atten.x - randFloat;
+				else {
+					li.atten.x = li.atten.x + randFloat;
+				}
+			}
+			else {
+				if(li.atten.x < 3.0f)
+					li.atten.x = li.atten.x + randFloat;
+				else {
+					li.atten.x = li.atten.x - randFloat;
+				}
+				li.atten.x = li.atten.x + randFloat;
+			}
+
+		}
+		theLights[i] = li;
+	}
+}
+
 void sLightDescription::ChangeTargetToLookAt()
 {
 	if (useTarget) {
-		if (currentTarget < g_vec_pMeshesToDraw.size() - 1) {
-			++currentTarget;
+		//if (currentTarget < g_vec_pMeshesToDraw.size() - 1) {
+		//	++currentTarget;
+		//}
+		//else {
+		//	currentTarget = 0;
+		//}
+
+		while (static_cast<unsigned long long>(currentTarget) + 1 < g_vec_pMeshesToDraw.size())
+		{
+			//not found string
+			if (g_vec_pMeshesToDraw[currentTarget + 1]->friendlyName.find("Torch") == std::string::npos) {
+				currentTarget++;
+				//if (target == 0) {
+				//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
+				//	prevTarget = target;
+				//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+				//}
+				//else {
+				//	g_vec_pMeshesToDraw[prevTarget]->RGBA = prevColor;
+				//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
+				//	prevTarget = target;
+				//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+				//}
+				//g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+			}
+			else {
+				//std::cout << "target: " << target << std::endl;
+				currentTarget++;
+				break;
+			}
 		}
-		else {
+		if (static_cast<unsigned long long>(currentTarget) + 1 > g_vec_pMeshesToDraw.size()) {
 			currentTarget = 0;
 		}
 	}

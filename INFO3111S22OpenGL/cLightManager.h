@@ -43,7 +43,7 @@ class cLightManager
 {
 public:
 	cLightManager() {}
-	static const unsigned int NUMBEROFLIGHTS = 5;
+	static const unsigned int NUMBEROFLIGHTS = 13;
 	static int numberOfUsedLights;
 	//the model that is used for lighting
 	static std::string LIGHT_OBJECT_NAME;
@@ -54,4 +54,7 @@ public:
 	void TurnAllTheLightsOff(void);
 	bool SaveLightConfigToFile(cLightManager& lightManager, std::string fileName, std::string& error);
 	bool LoadLightConfigFromFile(cLightManager& lightManager, cVAOManager* pVAOManager, unsigned int shaderProgramID, std::string fileName, std::string& error);
+	static void NextLight();
+	static void PreviousLight();
+	void RandomizeLightAttens();
 };

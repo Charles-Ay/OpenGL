@@ -80,12 +80,12 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
         //}
 
         // Saves the scene to a file
-        if (key == GLFW_KEY_9 && action == GLFW_PRESS)
-        {
-            std::string error;
-            SaveSceneToFile("assets/saves/SaveFile.txt", error);
-            //std::cout << "Saved info. to file" << std::endl;
-        }
+        //if (key == GLFW_KEY_9 && action == GLFW_PRESS)
+        //{
+        //    std::string error;
+        //    SaveSceneToFile("assets/saves/SaveFile.txt", error);
+        //    //std::cout << "Saved info. to file" << std::endl;
+        //}
 
         if (key == GLFW_KEY_PAGE_UP && action == GLFW_PRESS) 
         {
@@ -107,6 +107,21 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
         {
             cMesh::duplicateCurrentTarget(g_vec_pMeshesToDraw);
             std::cout << "Duplicated current target" << std::endl;
+        }        
+        if (glfwGetKey(window, GLFW_KEY_BACKSPACE) == GLFW_PRESS)
+        {
+            cLightManager::NextLight();
+            std::cout << "CurrentLight: " << std::to_string(currentLight) << std::endl;
+        }
+        if (glfwGetKey(window, GLFW_KEY_0) == GLFW_PRESS)
+        {
+            pTheLightManager->theLights[currentLight].ChangeTargetToLookAt();
+            std::cout << "CurrentLight: " << std::to_string(currentLight) << std::endl;
+        }
+        if (glfwGetKey(window, GLFW_KEY_8) == GLFW_PRESS)
+        {
+            pTheLightManager->theLights[currentLight].MoveToTarget();
+            std::cout << "CurrentLight: " << std::to_string(currentLight) << std::endl;
         }
     }
 
