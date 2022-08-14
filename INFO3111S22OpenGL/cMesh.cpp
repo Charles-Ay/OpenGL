@@ -1,7 +1,10 @@
 #include "cMesh.h"
+#include <iostream>
 
 static unsigned int m_NextID;	// = 0;
-static unsigned int target = 16;
+static unsigned int target = 176;
+static glm::vec4 prevColor;
+static unsigned int prevTarget;
 
 
 cMesh::cMesh()
@@ -56,8 +59,55 @@ int cMesh::getTarget()
 
 void cMesh::nextTarget(std::vector< cMesh* > &g_vec_pMeshesToDraw)
 {
-	if (target + 1 < g_vec_pMeshesToDraw.size())++target;
-	else target = 0;
+	//if (target + 1 < g_vec_pMeshesToDraw.size()) {
+	//	target++;
+	//}
+	//else {
+	//	target = 0;
+	//}
+	std::cout << "target: " << target << std::endl;
+	while (static_cast<unsigned long long>(target) + 1 < g_vec_pMeshesToDraw.size())
+	{
+		//not found string
+		if (g_vec_pMeshesToDraw[target + 1]->friendlyName.find("Floor") == std::string::npos ) {
+			target++;
+			//if (target == 0) {
+			//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
+			//	prevTarget = target;
+			//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+			//}
+			//else {
+			//	g_vec_pMeshesToDraw[prevTarget]->RGBA = prevColor;
+			//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
+			//	prevTarget = target;
+			//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+			//}
+			//g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+		}
+		else if (g_vec_pMeshesToDraw[target + 1]->friendlyName.find("floor") != std::string::npos) {
+			target = target + 1;
+			//if (target == 0) {
+			//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
+			//	prevTarget = target;
+			//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+			//}
+			//else {
+			//	g_vec_pMeshesToDraw[prevTarget]->RGBA = prevColor;
+			//	prevColor = g_vec_pMeshesToDraw[target]->RGBA;
+			//	prevTarget = target;
+			//	g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+			//}
+			//g_vec_pMeshesToDraw[target]->RGBA = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
+		}
+		else {
+			//std::cout << "target: " << target << std::endl;
+			target++;
+			break;
+		}
+	}
+	if (target + 1 > g_vec_pMeshesToDraw.size()) {
+		target = 0;
+	}
 }
 
 void cMesh::previousTarget(std::vector< cMesh* >& g_vec_pMeshesToDraw)

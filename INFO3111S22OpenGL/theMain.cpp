@@ -138,17 +138,17 @@ int main(void)
     cVAOManager* pVAOManager = new cVAOManager();
     std::string sceneLoadingErrors;
 	
-    LoadModelDiagramAndModels("INFO3111P2_Olawale_Ayeni_1002834_103363.txt", pVAOManager, shaderProgramNumber, sceneLoadingErrors);
+    //LoadModelDiagramAndModels("INFO3111P2_Olawale_Ayeni_1002834_103363.txt", pVAOManager, shaderProgramNumber, sceneLoadingErrors);
 
 
-    //if ( ! LoadAllTheModels("assets/saves/SaveFile.txt", pVAOManager, shaderProgramNumber, sceneLoadingErrors) )
-    //{
-    //    std::cout << "Something went wrong: " << sceneLoadingErrors << std::endl;
-    //}
-    //else
-    //{
-    //    std::cout << "Scene loaded OK" << std::endl;
-    //}
+    if ( ! LoadAllTheModels("assets/saves/SaveFile.txt", pVAOManager, shaderProgramNumber, sceneLoadingErrors) )
+    {
+        std::cout << "Something went wrong: " << sceneLoadingErrors << std::endl;
+    }
+    else
+    {
+        std::cout << "Scene loaded OK" << std::endl;
+    }
 	
 	
     std::string error;

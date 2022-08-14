@@ -366,11 +366,15 @@ bool LoadModelDiagramAndModels(std::string sceneFileName,
 		std::string m2 = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply";
 		std::string m3 = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Archway_01.ply";
 		std::string m4 = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply";
+		std::string m5 = "assets/models/Dungeon_models/Extra/SM_Bld_Dwarf_Building_Door_02_B.ply";
+		std::string m6 = "assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply";
 
 		pVAOManager->LoadModelIntoVAO(m1, drawInfo, shaderProgramID);
 		pVAOManager->LoadModelIntoVAO(m2, drawInfo, shaderProgramID);
 		pVAOManager->LoadModelIntoVAO(m3, drawInfo, shaderProgramID);
 		pVAOManager->LoadModelIntoVAO(m4, drawInfo, shaderProgramID);
+		pVAOManager->LoadModelIntoVAO(m5, drawInfo, shaderProgramID);
+		pVAOManager->LoadModelIntoVAO(m6, drawInfo, shaderProgramID);
 	}
 
 	
@@ -398,7 +402,7 @@ bool LoadModelDiagramAndModels(std::string sceneFileName,
 				pMesh->RGBA = glm::vec4(1.f, 1.f, 1.f, 1.f);
 				pMesh->orientationEulerAngle = glm::vec3(.0f, .0f, .0f);
 				pMesh->overallScale = 0.35f;
-				pMesh->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",Floor:" + std::to_string(i + 1);
+				pMesh->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",Floor:" + std::to_string(i + 1) +",ID=" + std::to_string(g_vec_pMeshesToDraw.size());
 				pMesh->texturePath = "assets/textures/Dungeons";
 				pMesh->textures[0] = "Dungeons_2_Texture_01_A_rotated_180_degrees.bmp";
 				pMesh->textureRatio[0] = 1;
@@ -454,7 +458,7 @@ bool LoadModelDiagramAndModels(std::string sceneFileName,
 				pMesh2->RGBA = glm::vec4(1.f, 1.f, 1.f, 1.f);
 				pMesh2->orientationEulerAngle = glm::vec3(.0f, 3.15f, .0f);
 				pMesh2->overallScale = 0.35f;
-				pMesh2->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",Wall:" + std::to_string(i + 1);
+				pMesh2->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",Wall:" + std::to_string(i + 1) + ",ID=" + std::to_string(g_vec_pMeshesToDraw.size());;
 				pMesh2->texturePath = "assets/textures/Dungeons";
 				pMesh2->textures[0] = "Dungeons_2_Texture_01_A_rotated_180_degrees.bmp";
 				pMesh2->textureRatio[0] = 1;
@@ -472,7 +476,10 @@ bool LoadModelDiagramAndModels(std::string sceneFileName,
 				pMesh->XYZLocation = glm::vec3(-74.f, 10.f, -338.f);
 				//floor width
 				if (i > 0) {
-					pMesh->XYZLocation.x = prevFloorW + 175;
+					if(heightConstant > 0)
+						pMesh->XYZLocation.x = prevFloorW + 175;
+					else
+						pMesh->XYZLocation.x = prevFloorW + 175;
 					prevFloorW = pMesh->XYZLocation.x;
 				}
 				else {
@@ -495,12 +502,13 @@ bool LoadModelDiagramAndModels(std::string sceneFileName,
 
 				//wall
 				cMesh* pMesh2 = new cMesh();
-				pMesh2->meshFileName = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Archway_01.ply";
-				pMesh2->XYZLocation = glm::vec3(-249.f, 3.5f, -509.f);
+				pMesh2->meshFileName = "assets/models/Dungeon_models/Extra/SM_Bld_Dwarf_Building_Door_02_B.ply";
+				pMesh2->XYZLocation = glm::vec3(-249.f, 3.5f, -504.f);
 				//wall width
 				if (i > 0) {
 					pMesh2->XYZLocation.x = prevWallW + 175;
 					prevWallW = pMesh2->XYZLocation.x;
+					pMesh2->XYZLocation.x += 178.5;
 				}
 				else {
 					prevWallW = pMesh2->XYZLocation.x;
@@ -510,7 +518,7 @@ bool LoadModelDiagramAndModels(std::string sceneFileName,
 
 				pMesh2->RGBA = glm::vec4(1.f, 1.f, 1.f, 1.f);
 				pMesh2->orientationEulerAngle = glm::vec3(.0f, 3.15f, .0f);
-				pMesh2->overallScale = 0.35f;
+				pMesh2->overallScale = 1.f;
 				pMesh2->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",Door:" + std::to_string(i + 1);
 				pMesh2->texturePath = "assets/textures/Dungeons";
 				pMesh2->textures[0] = "Dungeons_2_Texture_01_A_rotated_180_degrees.bmp";
@@ -523,26 +531,54 @@ bool LoadModelDiagramAndModels(std::string sceneFileName,
 				prevFloorW = prevFloorW + 175;
 
 				//wall
+				cMesh* pMesh = new cMesh();
+				pMesh->meshFileName = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply";
+				pMesh->XYZLocation = glm::vec3(-249.f, 3.5f, -509.f);
+				//wall width
+				if (i > 0) {
+					pMesh->XYZLocation.x = prevWallW + 175;
+					prevWallW = pMesh->XYZLocation.x;
+				}
+				else {
+					prevWallW = pMesh->XYZLocation.x;
+				}
+				if (numObjects > 0)
+					pMesh->XYZLocation.y += heightConstant;
+
+				pMesh->RGBA = glm::vec4(1.f, 1.f, 1.f, 1.f);
+				pMesh->orientationEulerAngle = glm::vec3(.0f, 3.15f, .0f);
+				pMesh->overallScale = 0.35f;
+				pMesh->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",StairWall:" + std::to_string(i + 1);
+				pMesh->texturePath = "assets/textures/Dungeons";
+				pMesh->textures[0] = "Dungeons_2_Texture_01_A_rotated_180_degrees.bmp";
+				pMesh->textureRatio[0] = 1;
+				pMesh->usedTextures = 1;
+				g_vec_pMeshesToDraw.push_back(pMesh);
+				++total;
+
+
+
+				//stair
 				cMesh* pMesh2 = new cMesh();
-				pMesh2->meshFileName = "assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply";
+				pMesh2->meshFileName = "assets/models/Dungeon_models/Extra/SM_Env_Dwarf_Narrow_Stairs_01.ply";
 				pMesh2->XYZLocation = glm::vec3(-249.f, 3.5f, -509.f);
 				//wall width
 				if (i > 0) {
-					pMesh2->XYZLocation.x = prevWallW + 175;
-					prevWallW = pMesh2->XYZLocation.x;
+					pMesh2->XYZLocation.x = prevFloorW + 175;
+					prevFloorW = pMesh2->XYZLocation.x;
 				}
 				else {
-					prevWallW = pMesh2->XYZLocation.x;
+					prevFloorW = pMesh2->XYZLocation.x;
 				}
 				if (numObjects > 0)
 					pMesh2->XYZLocation.y += heightConstant;
 
 				pMesh2->RGBA = glm::vec4(1.f, 1.f, 1.f, 1.f);
-				pMesh2->orientationEulerAngle = glm::vec3(.0f, 3.15f, .0f);
+				pMesh2->orientationEulerAngle = glm::vec3(.0f, glm::radians(270.f), .0f);
 				pMesh2->overallScale = 0.35f;
 				pMesh2->friendlyName = "Level:" + std::to_string(numObjects + 1) + ",Stair:" + std::to_string(i + 1);
 				pMesh2->texturePath = "assets/textures/Dungeons";
-				pMesh2->textures[0] = "Dungeons_2_Texture_01_A_rotated_180_degrees.bmp";
+				pMesh2->textures[0] = "SM_Env_Dwarf_Narrow_Stairs_01.ply";
 				pMesh2->textureRatio[0] = 1;
 				pMesh2->usedTextures = 1;
 				g_vec_pMeshesToDraw.push_back(pMesh2);
