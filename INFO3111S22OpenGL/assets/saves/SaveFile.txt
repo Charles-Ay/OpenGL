@@ -14,7 +14,7 @@ assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_02.ply
 assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_04.ply
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
-327
+339
 COMMENT_START
 XYZLocation.x   XYZLocation.y   XYZLocation.z
 RGBA.x   RGBA.y   RGBA.z   RGBA.a
@@ -3562,3 +3562,75 @@ assets/models/Dungeon_models/Plants/SM_Env_Tree_Vines_04.ply
 0   3.15   0
 50
 has_friendly   Vine_B
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_01.ply
+1405   568.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+30
+has_friendly   Palm1_C
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_02.ply
+1405   568.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+30
+has_friendly   Palm2_C
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_03.ply
+1405   568.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+30
+has_friendly   Palm3_C
+assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
+1399   560.5   -412
+0.227   0.372   0.43   1
+0   3.15   0
+65
+has_friendly   Grass_C
+assets/models/Dungeon_models/Plants/SM_Env_GroundLeaves_02.ply
+1425   560.5   -380
+0.227   0.372   0.43   1
+0   3.15   0
+60
+has_friendly   Leaves_C
+assets/models/Dungeon_models/Plants/SM_Env_Tree_Vines_04.ply
+1419   958.5   -490
+0.227   0.372   0.43   1
+0   3.15   0
+50
+has_friendly   Vine_C
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_01.ply
+11   1082.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+30
+has_friendly   Palm1_D
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_02.ply
+11   1082.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+30
+has_friendly   Palm2_D
+assets/models/Dungeon_models/Plants/SM_Env_PalmTree_03.ply
+11   1082.5   -428
+0.227   0.372   0.43   1
+0   3.15   0
+30
+has_friendly   Palm3_D
+assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
+11   1082.5   -412
+0.227   0.372   0.43   1
+0   3.15   0
+65
+has_friendly   Grass_D
+assets/models/Dungeon_models/Plants/SM_Env_GroundLeaves_02.ply
+15   1082.5   -398
+0.227   0.372   0.43   1
+0   3.15   0
+80
+has_friendly   Leaves_D
+assets/models/Dungeon_models/Plants/SM_Env_Tree_Vines_04.ply
+-163   1380.5   -484
+0.227   0.372   0.43   1
+0   3.15   0
+50
+has_friendly   Vine_D
