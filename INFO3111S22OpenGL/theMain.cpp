@@ -61,9 +61,9 @@ cLightManager* pTheLightManager = NULL;
 cBasicTextureManager* pTheTexureManager = NULL;
 
 
-bool g_EnableDebugLightSpeheres = true;
+bool g_EnableDebugLightSpeheres = false;
 
-unsigned int currentLight = 9;
+unsigned int currentLight = 0;
 
 glm::vec3 g_cameraEye = LoadCameraFromFile("assets/saves/CameraSaveFile.txt");
 cFlyCamera* g_pFlyCamera = NULL;
@@ -329,17 +329,17 @@ int main(void)
         }//if (::bUseFlyCamera)
 
 
-        // Point the spotlight at the cow
-        // Ray from the cow to the light
+        // Point the spotlight at the current target object
         // HACK:
-        int HACK_cow_index = pTheLightManager->theLights[currentLight].currentTarget;
+        int target_index = pTheLightManager->theLights[currentLight].currentTarget;
 
-        glm::vec3 rayFromCowToLight
-            = ::g_vec_pMeshesToDraw[HACK_cow_index]->XYZLocation - glm::vec3(pTheLightManager->theLights[currentLight].position);
-        rayFromCowToLight = glm::normalize(rayFromCowToLight);
+        glm::vec3 rayFromTargetToLight
+            = ::g_vec_pMeshesToDraw[target_index]->XYZLocation - glm::vec3(pTheLightManager->theLights[currentLight].position);
+        rayFromTargetToLight = glm::normalize(rayFromTargetToLight);
 
-        // rayFromCowToLight is now length 1.0 (or it's "normalized");
-        pTheLightManager->theLights[currentLight].direction = glm::vec4(rayFromCowToLight, 1.0f);
+        // INFO: Uncomment below to update the light direction
+        // we can now use it to find the angle between the light direction
+        //pTheLightManager->theLights[currentLight].direction = glm::vec4(rayFromTargetToLight, 1.0f);
 
 
 
