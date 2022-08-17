@@ -61,9 +61,10 @@ cLightManager* pTheLightManager = NULL;
 cBasicTextureManager* pTheTexureManager = NULL;
 
 
-bool g_EnableDebugLightSpeheres = false;
+bool g_EnableDebugLightSpeheres = true;
 
 unsigned int currentLight = 0;
+double lastFrameTime;
 
 glm::vec3 g_cameraEye = LoadCameraFromFile("assets/saves/CameraSaveFile.txt");
 cFlyCamera* g_pFlyCamera = NULL;
@@ -232,22 +233,18 @@ int main(void)
 	
     ImGui::StyleColorsDark();
 
+    lastFrameTime = glfwGetTime();
+    pTheLightManager->bDayNight = true;
+	
     while ( ! glfwWindowShouldClose(window) )
     {
-
+        
         AsyncKeyboardHandlingUpdate(window, *pVAOManager);
         AsyncMouseHandlingUpdate(window);
 
-        double thisFrameTime = glfwGetTime();
-        double deltaTime = lastFrameTime - thisFrameTime;
-        const double MAX_DELTA_TIME = 0.1f;     // 100 ms
-        if ( deltaTime > MAX_DELTA_TIME )
-        {
-            deltaTime = MAX_DELTA_TIME;
-        }
-
-        ::g_pFlyCamera->Update(deltaTime);
-        UpdateEachFrame(deltaTime);
+		
+        pTheLightManager->DayNightCycle(lastFrameTime);
+        lastFrameTime = glfwGetTime();
 
         // How far away is the cow? 
         //std::cout << glm::distance(pCow->XYZLocation, ::g_pFlyCamera->getEye()) << std::endl;

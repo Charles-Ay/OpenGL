@@ -24,7 +24,9 @@ extern bool bUseFlyCamera;	// = true
 
 extern glm::vec3 g_cameraEye;
 extern cFlyCamera* g_pFlyCamera;
+
 extern unsigned int currentLight;
+extern double lastFrameTime;
 
 const std::string sceneFileName = "assets/saves/SaveFile.txt";
 const std::string lightFileName = "assets/saves/LightConfigSaveFile.txt";

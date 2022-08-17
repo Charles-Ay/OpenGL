@@ -113,16 +113,29 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
             cLightManager::NextLight();
             std::cout << "CurrentLight: " << std::to_string(currentLight) << std::endl;
         }
-        if (glfwGetKey(window, GLFW_KEY_0) == GLFW_PRESS)
+        if (glfwGetKey(window, GLFW_KEY_7) == GLFW_PRESS)
         {
-            pTheLightManager->theLights[currentLight].ChangeTargetToLookAt();
+            cLightManager::GoToLastLight();
             std::cout << "CurrentLight: " << std::to_string(currentLight) << std::endl;
-        }
-        if (glfwGetKey(window, GLFW_KEY_8) == GLFW_PRESS)
+        }        
+        if (glfwGetKey(window, GLFW_KEY_MINUS) == GLFW_PRESS)
         {
-            pTheLightManager->theLights[currentLight].MoveToTarget();
-            std::cout << "CurrentLight: " << std::to_string(currentLight) << std::endl;
+            if (pTheLightManager->theLights[currentLight].param2.x == 0)
+			    pTheLightManager->theLights[currentLight].param2.x = 1;
+			else pTheLightManager->theLights[currentLight].param2.x = 0;
         }
+
+		
+        //if (glfwGetKey(window, GLFW_KEY_0) == GLFW_PRESS)
+        //{
+        //    pTheLightManager->theLights[currentLight].ChangeTargetToLookAt();
+        //    std::cout << "CurrentLight: " << std::to_string(currentLight) << std::endl;
+        //}
+        //if (glfwGetKey(window, GLFW_KEY_8) == GLFW_PRESS)
+        //{
+        //    pTheLightManager->theLights[currentLight].MoveToTarget();
+        //    std::cout << "CurrentLight: " << std::to_string(currentLight) << std::endl;
+        //}
     }
 
     return;

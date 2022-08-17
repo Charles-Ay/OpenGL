@@ -4,6 +4,7 @@
 #include <vector>
 #include "cVAOManager.h"
 #include "cMesh.h"
+#include <GLFW/glfw3.h>
 
 std::string cLightManager::LIGHT_OBJECT_NAME;
 int cLightManager::numberOfUsedLights = 0;
@@ -127,6 +128,11 @@ void cLightManager::PreviousLight()
 	else --currentLight;
 }
 
+void cLightManager::GoToLastLight()
+{
+	currentLight = numberOfUsedLights -1;
+}
+
 void cLightManager::RandomizeLightAttens()
 {
 	//for (sLightDescription light : theLights) {
@@ -146,7 +152,7 @@ void cLightManager::RandomizeLightAttens()
 
 	for (int i = 0; i < numberOfUsedLights; ++i) {
 		sLightDescription li = theLights[i];
-		if (li.diffuse.x < 1.0f && li.diffuse.y < 1.0f) {
+		if (li.diffuse.x < 1.0f && li.diffuse.y < 1.0f && i < 13) {
 			int plusMinus = rand() % 2;
 			float randFloat = rand() % 2 + 1;// 0 - 2
 			randFloat /= 5;
@@ -168,6 +174,41 @@ void cLightManager::RandomizeLightAttens()
 
 		}
 		theLights[i] = li;
+	}
+}
+
+void cLightManager::DayNightCycle(int lastFrameTime)
+{
+	//start pos -1010.81   1194   1105.4
+	if (dayStartPos == glm::vec4())
+		dayStartPos = theLights[0].position;
+	double cycleTime = 20.0;
+	if (bDayNight) {
+		thisFrameTime = glfwGetTime();
+		double delta = thisFrameTime - lastFrameTime;
+		if (delta < cycleTime) {
+			if (!hitPeak) {
+				if (theLights[0].position.y < 3493) {
+					theLights[0].position.y += 2;
+				}
+				if (theLights[0].position.x < 1460) {
+					theLights[0].position.x += 2;
+				}
+				else hitPeak = true;
+			}
+			else {
+				if (theLights[0].position.y > 1008) {
+					theLights[0].position.y -= 2;
+				}
+				if (theLights[0].position.x < 3822) {
+					theLights[0].position.x += 2;
+				}
+				else {
+					hitPeak = false;
+					theLights[0].position = dayStartPos;
+				}
+			}
+		}
 	}
 }
 

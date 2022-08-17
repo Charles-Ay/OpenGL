@@ -2,7 +2,7 @@
 #include <iostream>
 
 static unsigned int m_NextID;	// = 0;
-static unsigned int target = 338;
+static unsigned int target = 336;
 static glm::vec4 prevColor;
 static unsigned int prevTarget;
 

@@ -14,7 +14,7 @@ assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_02.ply
 assets/models/Dungeon_models/Torches/SM_Prop_Dwarf_Torch_04.ply
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_01.ply
 assets/models/Dungeon_models/Walls/SM_Env_Dwarf_Wall_Window_01.ply
-339
+347
 COMMENT_START
 XYZLocation.x   XYZLocation.y   XYZLocation.z
 RGBA.x   RGBA.y   RGBA.z   RGBA.a
@@ -220,7 +220,7 @@ assets/models/Dungeon_models/Extra/SM_Bld_Dwarf_Building_Door_02_B.ply
 has_friendly   Level:1,Door:9
 has_texture
 assets/textures/Dungeons
-Dungeons_2_Texture_01_A_rotated_180_degrees.bmp   
+Texture_03_A_rotated_180_degrees.bmp   
 texture_end
 1   
 assets/models/Dungeon_models/Floors/SM_Env_Dwarf_Floor_14.ply
@@ -3496,141 +3496,349 @@ assets/models/Dungeon_models/Plants/SM_Env_PalmTree_01.ply
 0   3.15   0
 30
 has_friendly   Palm1
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_PalmTree_02.ply
 1597   18.5   -428
 0.227   0.372   0.43   1
 0   3.15   0
 30
 has_friendly   Palm2
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_PalmTree_03.ply
 1597   18.5   -428
 0.227   0.372   0.43   1
 0   3.15   0
 30
 has_friendly   Palm3
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
-1597   18.5   -428
+1595   18.5   -428
 0.227   0.372   0.43   1
 0   3.15   0
 65
 has_friendly   Grass
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_GroundLeaves_02.ply
 1533   18.5   -428
 0.227   0.372   0.43   1
 0   3.15   0
 80
 has_friendly   Leaves
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_Tree_Vines_04.ply
 1503   368.5   -492
 0.227   0.372   0.43   1
 0   3.15   0
 50
 has_friendly   Vine
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_PalmTree_01.ply
 1221   18.5   -428
 0.227   0.372   0.43   1
 0   3.15   0
 30
 has_friendly   Palm1_B
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_PalmTree_02.ply
 1221   18.5   -428
 0.227   0.372   0.43   1
 0   3.15   0
 30
 has_friendly   Palm2_B
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_PalmTree_03.ply
 1221   18.5   -428
 0.227   0.372   0.43   1
 0   3.15   0
 30
 has_friendly   Palm3_B
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
-1221   18.5   -428
+1209   30.5   -394
 0.227   0.372   0.43   1
 0   3.15   0
 65
 has_friendly   Grass_B
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_GroundLeaves_02.ply
-1496   18.5   -428
+1228   18.5   -400
 0.227   0.372   0.43   1
 0   3.15   0
 80
 has_friendly   Leaves_B
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_Tree_Vines_04.ply
 1163   368.5   -492
 0.227   0.372   0.43   1
 0   3.15   0
 50
 has_friendly   Vine_B
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_PalmTree_01.ply
 1405   568.5   -428
 0.227   0.372   0.43   1
 0   3.15   0
 30
 has_friendly   Palm1_C
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_PalmTree_02.ply
 1405   568.5   -428
 0.227   0.372   0.43   1
 0   3.15   0
 30
 has_friendly   Palm2_C
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_PalmTree_03.ply
 1405   568.5   -428
 0.227   0.372   0.43   1
 0   3.15   0
 30
 has_friendly   Palm3_C
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
-1399   560.5   -412
+1393   560.5   -412
 0.227   0.372   0.43   1
 0   3.15   0
 65
 has_friendly   Grass_C
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_GroundLeaves_02.ply
 1425   560.5   -380
 0.227   0.372   0.43   1
 0   3.15   0
 60
 has_friendly   Leaves_C
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_Tree_Vines_04.ply
 1419   958.5   -490
 0.227   0.372   0.43   1
 0   3.15   0
 50
 has_friendly   Vine_C
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_PalmTree_01.ply
 11   1082.5   -428
 0.227   0.372   0.43   1
 0   3.15   0
 30
 has_friendly   Palm1_D
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_PalmTree_02.ply
 11   1082.5   -428
 0.227   0.372   0.43   1
 0   3.15   0
 30
 has_friendly   Palm2_D
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_PalmTree_03.ply
 11   1082.5   -428
 0.227   0.372   0.43   1
 0   3.15   0
 30
 has_friendly   Palm3_D
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
-11   1082.5   -412
+15   1082.5   -412
 0.227   0.372   0.43   1
 0   3.15   0
 65
 has_friendly   Grass_D
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_GroundLeaves_02.ply
 15   1082.5   -398
 0.227   0.372   0.43   1
 0   3.15   0
 80
 has_friendly   Leaves_D
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
 assets/models/Dungeon_models/Plants/SM_Env_Tree_Vines_04.ply
 -163   1380.5   -484
 0.227   0.372   0.43   1
 0   3.15   0
 50
 has_friendly   Vine_D
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
+assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
+1591   18.5   -404
+0.227   0.372   0.43   1
+0   3.15   0
+65
+has_friendly   Grass_DUPLICATE
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
+assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
+1607   18.5   -404
+0.227   0.372   0.43   1
+0   3.15   0
+65
+has_friendly   Grass_DUPLICATE_DUPLICATE
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
+assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
+1235   30.5   -418
+0.227   0.372   0.43   1
+0   3.15   0
+65
+has_friendly   Grass_B_DUPLICATE
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
+assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
+1249   30.5   -394
+0.227   0.372   0.43   1
+0   3.15   0
+65
+has_friendly   Grass_B_DUPLICATE_DUPLICATE
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
+assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
+1393   560.5   -380
+0.227   0.372   0.43   1
+0   3.15   0
+65
+has_friendly   Grass_C_DUPLICATE
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
+assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
+1427   560.5   -406
+0.227   0.372   0.43   1
+0   3.15   0
+65
+has_friendly   Grass_C_DUPLICATE_DUPLICATE
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
+assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
+-19   1082.5   -412
+0.227   0.372   0.43   1
+0   3.15   0
+65
+has_friendly   Grass_D_DUPLICATE
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   
+assets/models/Dungeon_models/Plants/SM_Env_Grass_01.ply
+17   1082.5   -392
+0.227   0.372   0.43   1
+0   3.15   0
+65
+has_friendly   Grass_D_DUPLICATE_DUPLICATE
+has_texture
+assets/textures/Dungeons
+leaf.bmp   
+texture_end
+30   

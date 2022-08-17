@@ -35,15 +35,20 @@ struct sLightDescription
 	bool useTarget = false;
 
 	int currentTarget = 0;
-	
 };
 
 
 class cLightManager
 {
+private:
+	bool hitPeak = false;
 public:
+	bool bDayNight = false;
+	double thisFrameTime = 0;
+	glm::vec4 dayStartPos = glm::vec4();
+	
 	cLightManager() {}
-	static const unsigned int NUMBEROFLIGHTS = 13;
+	static const unsigned int NUMBEROFLIGHTS = 20;
 	static int numberOfUsedLights;
 	//the model that is used for lighting
 	static std::string LIGHT_OBJECT_NAME;
@@ -56,5 +61,8 @@ public:
 	bool LoadLightConfigFromFile(cLightManager& lightManager, cVAOManager* pVAOManager, unsigned int shaderProgramID, std::string fileName, std::string& error);
 	static void NextLight();
 	static void PreviousLight();
+	static void GoToLastLight();
 	void RandomizeLightAttens();
+	
+	void DayNightCycle(int lastFrameTime);
 };
