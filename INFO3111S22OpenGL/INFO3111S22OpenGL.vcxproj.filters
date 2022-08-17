@@ -15,9 +15,6 @@
     <Filter Include="FlyCamera">
       <UniqueIdentifier>{37f74ce4-24e6-4132-a46f-11cf682c4a9d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="dear">
-      <UniqueIdentifier>{baed14da-32df-44dc-80aa-03091a4913fd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="TextureManager">
       <UniqueIdentifier>{03258d37-e1d2-4ce5-837e-64f25cbfeec4}</UniqueIdentifier>
     </Filter>
@@ -55,30 +52,6 @@
     </ClCompile>
     <ClCompile Include="cLightManager.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="dear\imgui.cpp">
-      <Filter>dear</Filter>
-    </ClCompile>
-    <ClCompile Include="dear\imgui_demo.cpp">
-      <Filter>dear</Filter>
-    </ClCompile>
-    <ClCompile Include="dear\imgui_draw.cpp">
-      <Filter>dear</Filter>
-    </ClCompile>
-    <ClCompile Include="dear\imgui_impl_glfw.cpp">
-      <Filter>dear</Filter>
-    </ClCompile>
-    <ClCompile Include="dear\imgui_impl_opengl3.cpp">
-      <Filter>dear</Filter>
-    </ClCompile>
-    <ClCompile Include="dear\imgui_tables.cpp">
-      <Filter>dear</Filter>
-    </ClCompile>
-    <ClCompile Include="dear\imgui_widgets.cpp">
-      <Filter>dear</Filter>
     </ClCompile>
     <ClCompile Include="cMesh.cpp">
       <Filter>Source Files</Filter>
@@ -129,36 +102,6 @@
     </ClInclude>
     <ClInclude Include="FlyCamera\iCamera.h">
       <Filter>FlyCamera</Filter>
-    </ClInclude>
-    <ClInclude Include="UI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="dear\imconfig.h">
-      <Filter>dear</Filter>
-    </ClInclude>
-    <ClInclude Include="dear\imgui.h">
-      <Filter>dear</Filter>
-    </ClInclude>
-    <ClInclude Include="dear\imgui_impl_glfw.h">
-      <Filter>dear</Filter>
-    </ClInclude>
-    <ClInclude Include="dear\imgui_impl_opengl3.h">
-      <Filter>dear</Filter>
-    </ClInclude>
-    <ClInclude Include="dear\imgui_impl_opengl3_loader.h">
-      <Filter>dear</Filter>
-    </ClInclude>
-    <ClInclude Include="dear\imgui_internal.h">
-      <Filter>dear</Filter>
-    </ClInclude>
-    <ClInclude Include="dear\imstb_rectpack.h">
-      <Filter>dear</Filter>
-    </ClInclude>
-    <ClInclude Include="dear\imstb_textedit.h">
-      <Filter>dear</Filter>
-    </ClInclude>
-    <ClInclude Include="dear\imstb_truetype.h">
-      <Filter>dear</Filter>
     </ClInclude>
     <ClInclude Include="cBasicTextureManager\C24BitBMPpixel.h">
       <Filter>TextureManager</Filter>

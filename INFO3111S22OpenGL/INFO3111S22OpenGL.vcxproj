@@ -152,20 +152,12 @@
     <ClCompile Include="cVAOManager.cpp" />
     <ClCompile Include="cVAOManager_helper.cpp" />
     <ClCompile Include="cVAOManager_OtherLoaders.cpp" />
-    <ClCompile Include="dear\imgui.cpp" />
-    <ClCompile Include="dear\imgui_demo.cpp" />
-    <ClCompile Include="dear\imgui_draw.cpp" />
-    <ClCompile Include="dear\imgui_impl_glfw.cpp" />
-    <ClCompile Include="dear\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="dear\imgui_tables.cpp" />
-    <ClCompile Include="dear\imgui_widgets.cpp" />
     <ClCompile Include="DrawObjectFunction.cpp" />
     <ClCompile Include="FlyCamera\cFlyCamera.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="InputHandlerFunctions.cpp" />
     <ClCompile Include="SceneHandling.cpp" />
     <ClCompile Include="theMain.cpp" />
-    <ClCompile Include="UI.cpp" />
     <ClCompile Include="UpdateEachFrame.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -177,20 +169,10 @@
     <ClInclude Include="cMesh.h" />
     <ClInclude Include="cShaderManager.h" />
     <ClInclude Include="cVAOManager.h" />
-    <ClInclude Include="dear\imconfig.h" />
-    <ClInclude Include="dear\imgui.h" />
-    <ClInclude Include="dear\imgui_impl_glfw.h" />
-    <ClInclude Include="dear\imgui_impl_opengl3.h" />
-    <ClInclude Include="dear\imgui_impl_opengl3_loader.h" />
-    <ClInclude Include="dear\imgui_internal.h" />
-    <ClInclude Include="dear\imstb_rectpack.h" />
-    <ClInclude Include="dear\imstb_textedit.h" />
-    <ClInclude Include="dear\imstb_truetype.h" />
     <ClInclude Include="FlyCamera\cFlyCamera.h" />
     <ClInclude Include="FlyCamera\iCamera.h" />
     <ClInclude Include="globalStuff.h" />
     <ClInclude Include="cLightManager.h" />
-    <ClInclude Include="UI.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="simpleFragment.glsl" />

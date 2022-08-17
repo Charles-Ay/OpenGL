@@ -39,7 +39,7 @@ private:
 	glm::vec3 m_at;			// A direction, not a location
 	glm::vec3 m_up;
 	// THESE DON'T LIKELY CHANGE
-	glm::vec3 m_frontOfCamera;// = glm::vec3(0,0,1);
+	glm::vec3 m_frontOfCamera; //= //glm::vec3(1332.32   1056.53   3356.53);
 	glm::vec3 m_upIsYVector;	// = glm::vec3(0,1,0);
 
 public:

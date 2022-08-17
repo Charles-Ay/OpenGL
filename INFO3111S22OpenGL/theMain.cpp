@@ -26,11 +26,6 @@
 #include "cBasicTextureManager/cBasicTextureManager.h"
 #include "cLoadTexture.h"
 
-#include "dear/imgui.h"
-#include "dear/imgui_impl_glfw.h"
-#include "dear/imgui_impl_opengl3.h"
-#include "UI.h"
-
 
 void PlaceAModelInARandomLocation(std::string modelName, float minScale, float maxScale);
 
@@ -219,19 +214,8 @@ int main(void)
     //█▀▄ █▀▀ ▄▀█ █▀█   █ █▀▄▀█ █▀▀ █░█ █   █▀▀ █▀█ █▄░█ ▀█▀ █▀▀ ▀▄▀ ▀█▀
     //█▄▀ ██▄ █▀█ █▀▄   █ █░▀░█ █▄█ █▄█ █   █▄▄ █▄█ █░▀█ ░█░ ██▄ █░█ ░█░
     // Setup Dear ImGui context
-    const char* glsl_version = "#version 410";
-    IMGUI_CHECKVERSION();
-    ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO();
-    // Setup Platform/Renderer bindings
-    ImGui_ImplGlfw_InitForOpenGL(window, true);
-    ImGui_ImplOpenGL3_Init(glsl_version);
-    //io.IniFilename = NULL;
-    // Setup Dear ImGui style
 
-    UI::InitChanges();
-	
-    ImGui::StyleColorsDark();
+
 
     lastFrameTime = glfwGetTime();
     pTheLightManager->bDayNight = true;
@@ -271,31 +255,7 @@ int main(void)
         glClearColor(0.0f, 0.3f, 3.0f, 1.0f);       // Clear screen to blue colour
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
-        //█▀▄ █▀▀ ▄▀█ █▀█   █ █▀▄▀█ █▀▀ █░█ █   █▄▄ █▀█ █ █░░ █▀▀ █▀█   █▀█ █░░ ▄▀█ ▀█▀ █▀▀
-        //█▄▀ ██▄ █▀█ █▀▄   █ █░▀░█ █▄█ █▄█ █   █▄█ █▄█ █ █▄▄ ██▄ █▀▄   █▀▀ █▄▄ █▀█ ░█░ ██▄
-        // feed inputs to dear imgui, start new frame
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
-
-        //█▀▄ █▀▀ ▄▀█ █▀█   █ █▀▄▀█ █▀▀ █░█ █   █▀▀ █▀█ █▀▀ ▄▀█ ▀█▀ █ █▀█ █▄░█   ▄▀█ █▀█ █▀▀ ▄▀█
-        //█▄▀ ██▄ █▀█ █▀▄   █ █░▀░█ █▄█ █▄█ █   █▄▄ █▀▄ ██▄ █▀█ ░█░ █ █▄█ █░▀█   █▀█ █▀▄ ██▄ █▀█
-        // render your GUI
-        //ImGui::Text("Hello, world %d", 123);
-        //if (ImGui::Button("Save"))
-        //    SaveSceneToFile("assets/saves/SaveFile.txt", error);
-        //ImGui::ShowDemoWindow();
-		UI::ShowMainWindow();
-
-
-
-
-        //█▀▄ █▀▀ ▄▀█ █▀█   █ █▀▄▀█ █▀▀ █░█ █   █▀▀ █▄░█ █▀▄
-        //█▄▀ ██▄ █▀█ █▀▄   █ █░▀░█ █▄█ █▄█ █   ██▄ █░▀█ █▄▀
-		
-//        mat4x4_ortho(p, -ratio, ratio, -1.f, 1.f, 1.f, -1.f);
-        //FOV
+		//FOV
         matProjection = glm::perspective(0.6f,
                              ratio,
                              0.1f,
@@ -425,12 +385,7 @@ int main(void)
 			DrawObject(pCurrentMesh, shaderProgramNumber, pVAOManager,
 				matModel, matView, matProjection);
 		}
-		
-    //█▀▄ █▀▀ ▄▀█ █▀█   █ █▀▄▀█ █▀▀ █░█ █   █▀█ █▀▀ █▄░█ █▀▄ █▀▀ █▀█
-    //█▄▀ ██▄ █▀█ █▀▄   █ █░▀░█ █▄█ █▄█ █   █▀▄ ██▄ █░▀█ █▄▀ ██▄ █▀▄
-    // Render dear imgui into screen
-        ImGui::Render();
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+	
 //    _____           _          __                                                _            
 //   | ____|_ __   __| |   ___  / _|  ___  ___ ___ _ __   ___   _ __ ___ _ __   __| | ___ _ __  
 //   |  _| | '_ \ / _` |  / _ \| |_  / __|/ __/ _ \ '_ \ / _ \ | '__/ _ \ '_ \ / _` |/ _ \ '__| 
@@ -541,21 +496,14 @@ int main(void)
         // Change the title of the window to show the camera location
         std::stringstream ssTitle;
         ssTitle << "Camera (x,y,z): "               // just like cout or fstream, etc.
-            << ::g_cameraEye.x << ", "
-            << ::g_cameraEye.y << ", "
-            << ::g_cameraEye.z;
-
-        ssTitle << " Light#" << currentLight << "Current Target: "
-			<< pTheLightManager->theLights[currentLight].currentTarget << ", "
-            << "XYZ: "
-            << pTheLightManager->theLights[currentLight].position.x << ", "
-            << pTheLightManager->theLights[currentLight].position.y << ", "
-            << pTheLightManager->theLights[currentLight].position.z << "  "
-            << "Linear: " << pTheLightManager->theLights[currentLight].atten.y
-            << " Quad: " << pTheLightManager->theLights[currentLight].atten.z
-            << " (in,out) angle: ("
-            << pTheLightManager->theLights[currentLight].param1.y << ", "
-            << pTheLightManager->theLights[currentLight].param1.z << ")";
+            << ::g_pFlyCamera->eye.x << ", "
+            << ::g_pFlyCamera->eye.y << ", "
+            << ::g_pFlyCamera->eye.z;
+        ssTitle << "Camera Lookat (x,y,z): "
+            << ::g_pFlyCamera->getAt().x << ", "
+            << ::g_pFlyCamera->getAt().y << ", "
+            << ::g_pFlyCamera->getAt().z;
+        glfwSetWindowTitle(window, ssTitle.str().c_str());
 //        glfwSetWindowTitle(window, "Hello!");
         glfwSetWindowTitle( window, ssTitle.str().c_str() );
 
